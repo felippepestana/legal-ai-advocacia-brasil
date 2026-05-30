@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "source": "Fundamentos de Prompt 101 (infográfico)",
+  "asset_reference": "assets/regras_de_prompt.png",
+  "capabilities": {
+    "analise_documental": {
+      "fundamentos": [2, 3, 7, 8, 9, 12, 13, 16, 18, 19, 27],
+      "prompt_file": "prompts/sistema-analise-documento.md",
+      "skill": "analise-documental-brasil",
+      "tamanho": "medio"
+    },
+    "validacao_peticao_cpc": {
+      "fundamentos": [4, 9, 17, 24],
+      "prompt_file": "prompts/sistema-validacao-cpc.md",
+      "skill": "validacao-peticao-cpc",
+      "tamanho": "medio"
+    },
+    "geracao_pecas": {
+      "fundamentos": [2, 8, 9, 14, 20, 23, 25, 28],
+      "prompt_file": "prompts/sistema-geracao-peca.md",
+      "skill": "geracao-pecas-advocacia",
+      "tamanho": "longo"
+    },
+    "fundamentacao_juridica": {
+      "fundamentos": [2, 12, 13, 16, 24, 27],
+      "prompt_file": "prompts/sistema-fundamentacao-juridica.md",
+      "skill": "geracao-pecas-advocacia",
+      "tamanho": "medio"
+    },
+    "pesquisa_normativa": {
+      "fundamentos": [12, 13, 24],
+      "prompt_file": "prompts/sistema-pesquisa-normativa.md",
+      "skill": "pesquisa-normativa-brasil",
+      "tamanho": "medio"
+    },
+    "assistente_escritorio": {
+      "fundamentos": [2, 5, 14, 16],
+      "prompt_file": "prompts/sistema-assistente-escritorio.md",
+      "skill": null,
+      "tamanho": "variavel"
+    }
+  },
+  "excluded_from_runtime": [6, 15],
+  "dev_only": [22]
+}

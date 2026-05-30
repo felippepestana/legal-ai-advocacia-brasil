@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "capabilities": [
+    {
+      "id": "analise_documental",
+      "nome": "Análise Inteligente de Documentos",
+      "entradas": ["pdf", "docx", "texto"],
+      "saidas": ["tipo_peca", "entidades", "conceitos", "resumo", "oportunidades"],
+      "ordenamento_br": ["CPC", "identificação CNJ", "qualificação partes"],
+      "depende_llm": true,
+      "deterministico_parcial": true
+    },
+    {
+      "id": "validacao_peca",
+      "nome": "Validação de Peça Processual",
+      "entradas": ["texto_peca", "tipo_peca"],
+      "saidas": ["checklist_cpc", "score_conformidade", "sugestoes"],
+      "ordenamento_br": ["CPC art. 319-321"],
+      "depende_llm": false,
+      "deterministico_parcial": true
+    },
+    {
+      "id": "geracao_peca",
+      "nome": "Geração de Documentos",
+      "entradas": ["template_id", "dados_estruturados"],
+      "saidas": ["minuta", "metadata", "quality_score"],
+      "ordenamento_br": ["templates por área e tipo"],
+      "depende_llm": true,
+      "revisao_humana_obrigatoria": true
+    },
+    {
+      "id": "prazos",
+      "nome": "Gestão de Prazos",
+      "entradas": ["data_base", "tipo_prazo", "tribunal"],
+      "saidas": ["data_vencimento", "dias_uteis", "alertas"],
+      "ordenamento_br": ["feriados BR", "CPC contagem"],
+      "depende_llm": false
+    },
+    {
+      "id": "pesquisa",
+      "nome": "Pesquisa Jurídica",
+      "entradas": ["consulta", "filtros"],
+      "saidas": ["resultados", "citacoes", "resumo"],
+      "ordenamento_br": ["lei", "súmulas", "jurisprudência"],
+      "depende_llm": true,
+      "integracao_futura": ["STJ", "STF", "Planalto", "bases privadas"]
+    },
+    {
+      "id": "calculadora",
+      "nome": "Cálculos Jurídicos",
+      "entradas": ["tipo_calculo", "parametros"],
+      "saidas": ["valor", "memoria_calculo", "fundamentacao"],
+      "ordenamento_br": ["CLT", "CC", "índices econômicos"],
+      "depende_llm": false
+    }
+  ]
+}

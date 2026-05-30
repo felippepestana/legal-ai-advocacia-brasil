@@ -1,0 +1,89 @@
+{
+  "plan_timestamp": "2025-09-12T17:51:47.831967",
+  "prioritized_improvements": [
+    {
+      "functionality": "Gestão Inteligente de Prazos",
+      "priority_level": "Baixa",
+      "test_score": 100.0,
+      "user_satisfaction": 9.99,
+      "combined_score": 45.99,
+      "recommended_actions": [
+        "Adicionar integração com calendários externos",
+        "Melhorar categorização de tipos de prazo",
+        "Refinar algoritmos para maior precisão"
+      ]
+    },
+    {
+      "functionality": "Análise Inteligente de Documentos",
+      "priority_level": "Baixa",
+      "test_score": 100.0,
+      "user_satisfaction": 10.0,
+      "combined_score": 46.0,
+      "recommended_actions": [
+        "Refinar algoritmos para maior precisão",
+        "Melhorar reconhecimento de documentos complexos",
+        "Otimizar performance e velocidade de resposta"
+      ]
+    },
+    {
+      "functionality": "Automação de Workflows",
+      "priority_level": "Baixa",
+      "test_score": 100.0,
+      "user_satisfaction": 10.0,
+      "combined_score": 46.0,
+      "recommended_actions": [
+        "Melhorar integração com sistemas externos",
+        "Refinar algoritmos para maior precisão",
+        "Adicionar mais templates pré-configurados"
+      ]
+    },
+    {
+      "functionality": "Assistente Virtual Jurídico",
+      "priority_level": "Baixa",
+      "test_score": 100.0,
+      "user_satisfaction": 10.0,
+      "combined_score": 46.0,
+      "recommended_actions": [
+        "Implementar respostas mais concisas",
+        "Atualizar base de conhecimento jurisprudencial",
+        "Refinar algoritmos para maior precisão"
+      ]
+    },
+    {
+      "functionality": "Analytics Jurídico",
+      "priority_level": "Baixa",
+      "test_score": 100.0,
+      "user_satisfaction": 10.0,
+      "combined_score": 46.0,
+      "recommended_actions": [
+        "Refinar algoritmos para maior precisão",
+        "Implementar comparações com benchmarks do mercado",
+        "Adicionar mais métricas e KPIs"
+      ]
+    },
+    {
+      "functionality": "Geração de Documentos",
+      "priority_level": "Baixa",
+      "test_score": 100.0,
+      "user_satisfaction": 10.0,
+      "combined_score": 46.0,
+      "recommended_actions": []
+    },
+    {
+      "functionality": "Pesquisa Inteligente",
+      "priority_level": "Baixa",
+      "test_score": 100.0,
+      "user_satisfaction": 10.0,
+      "combined_score": 46.0,
+      "recommended_actions": []
+    },
+    {
+      "functionality": "Cálculos Jurídicos Avançados",
+      "priority_level": "Baixa",
+      "test_score": 100.0,
+      "user_satisfaction": 10.0,
+      "combined_score": 46.0,
+      "recommended_actions": []
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+version: "1.0"
+# Alinhado a deadline_manager.DeadlineType — ajustar por rito específico quando integrar PJe
+feriados:
+  fixos_nacionais:
+    - "01-01"
+    - "04-21"
+    - "05-01"
+    - "09-07"
+    - "10-12"
+    - "11-02"
+    - "11-15"
+    - "12-25"
+  moveis:
+    - carnaval_segunda
+    - carnaval_terca
+    - sexta_santa
+    - corpus_christi
+
+prazos_padrao_dias_uteis:
+  contestacao: 15
+  recurso: 15
+  embargos: 15
+  replica: 10
+  manifestacao: 15
+  cumprimento_sentenca: 15
+  juntada_documentos: 5
+
+regras_contagem:
+  - id: dias_uteis_cpc
+    descricao: Regra geral CPC — dias úteis, exclui-se dia do começo, inclui-se vencimento
+    fonte: "CPC art. 219 e 224"
+  - id: suspensao_ferias
+    descricao: Suspensão em recesso forense — implementar por tribunal na Fase 2
+    status: planejado

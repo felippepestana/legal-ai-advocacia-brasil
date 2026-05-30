@@ -1,0 +1,33 @@
+# Fonte canônica — espelhar em packages/legal_core/enums.py
+version: "1.0"
+areas:
+  - id: civil
+    nome: Civil
+    legislacao_base: ["CF/1988", "CC/2002", "CPC/2015"]
+  - id: trabalhista
+    nome: Trabalhista
+    legislacao_base: ["CLT", "CPC/2015 (subsidiário)"]
+  - id: penal
+    nome: Penal
+    legislacao_base: ["CP", "CPP"]
+  - id: tributario
+    nome: Tributário
+    legislacao_base: ["CTN", "CPC/2015"]
+  - id: consumidor
+    nome: Consumidor
+    legislacao_base: ["CDC", "CPC/2015"]
+  - id: familia
+    nome: Família
+    legislacao_base: ["CC/2002", "CPC/2015"]
+  - id: empresarial
+    nome: Empresarial
+    legislacao_base: ["CC/2002", "Lei 6.404/76", "CPC/2015"]
+  - id: administrativo
+    nome: Administrativo
+    legislacao_base: ["Lei 9.784/99", "CPC/2015"]
+  - id: previdenciario
+    nome: Previdenciário
+    legislacao_base: ["Lei 8.213/91", "CPC/2015"]
+  - id: constitucional
+    nome: Constitucional
+    legislacao_base: ["CF/1988"]

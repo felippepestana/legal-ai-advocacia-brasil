@@ -1,0 +1,146 @@
+{
+  "analysis_timestamp": "2025-09-12T17:50:20.659424",
+  "overall_metrics": {
+    "average_satisfaction": 10.0,
+    "average_ease_of_use": 8.33,
+    "average_accuracy_perception": 8.95,
+    "average_speed_perception": 8.41,
+    "recommendation_rate": 100.0,
+    "total_sessions": 64
+  },
+  "functionality_analysis": {
+    "Análise Inteligente de Documentos": {
+      "average_satisfaction": 10.0,
+      "issues_reported": 0,
+      "total_sessions": 8,
+      "top_improvement_suggestions": [
+        "Refinar algoritmos para maior precisão",
+        "Melhorar reconhecimento de documentos complexos",
+        "Otimizar performance e velocidade de resposta"
+      ]
+    },
+    "Automação de Workflows": {
+      "average_satisfaction": 10.0,
+      "issues_reported": 0,
+      "total_sessions": 8,
+      "top_improvement_suggestions": [
+        "Melhorar integração com sistemas externos",
+        "Refinar algoritmos para maior precisão",
+        "Adicionar mais templates pré-configurados"
+      ]
+    },
+    "Assistente Virtual Jurídico": {
+      "average_satisfaction": 10.0,
+      "issues_reported": 0,
+      "total_sessions": 8,
+      "top_improvement_suggestions": [
+        "Implementar respostas mais concisas",
+        "Atualizar base de conhecimento jurisprudencial",
+        "Refinar algoritmos para maior precisão"
+      ]
+    },
+    "Gestão Inteligente de Prazos": {
+      "average_satisfaction": 9.99,
+      "issues_reported": 0,
+      "total_sessions": 8,
+      "top_improvement_suggestions": [
+        "Adicionar integração com calendários externos",
+        "Melhorar categorização de tipos de prazo",
+        "Refinar algoritmos para maior precisão"
+      ]
+    },
+    "Analytics Jurídico": {
+      "average_satisfaction": 10.0,
+      "issues_reported": 0,
+      "total_sessions": 8,
+      "top_improvement_suggestions": [
+        "Refinar algoritmos para maior precisão",
+        "Implementar comparações com benchmarks do mercado",
+        "Adicionar mais métricas e KPIs"
+      ]
+    },
+    "Geração de Documentos": {
+      "average_satisfaction": 10.0,
+      "issues_reported": 0,
+      "total_sessions": 8,
+      "top_improvement_suggestions": [
+        "Melhorar personalização de documentos",
+        "Refinar algoritmos para maior precisão",
+        "Expandir biblioteca de templates"
+      ]
+    },
+    "Pesquisa Inteligente": {
+      "average_satisfaction": 10.0,
+      "issues_reported": 0,
+      "total_sessions": 8,
+      "top_improvement_suggestions": [
+        "Implementar filtros avançados",
+        "Refinar algoritmos para maior precisão",
+        "Adicionar mais fontes de dados"
+      ]
+    },
+    "Cálculos Jurídicos Avançados": {
+      "average_satisfaction": 10.0,
+      "issues_reported": 0,
+      "total_sessions": 8,
+      "top_improvement_suggestions": [
+        "Otimizar performance e velocidade de resposta",
+        "Implementar explicações detalhadas das fórmulas",
+        "Adicionar mais tipos de cálculo"
+      ]
+    }
+  },
+  "priority_improvements": [
+    {
+      "functionality": "Gestão Inteligente de Prazos",
+      "priority_score": 9.99,
+      "issues_count": 0,
+      "recommended_actions": [
+        "Adicionar integração com calendários externos",
+        "Melhorar categorização de tipos de prazo",
+        "Refinar algoritmos para maior precisão"
+      ]
+    },
+    {
+      "functionality": "Análise Inteligente de Documentos",
+      "priority_score": 10.0,
+      "issues_count": 0,
+      "recommended_actions": [
+        "Refinar algoritmos para maior precisão",
+        "Melhorar reconhecimento de documentos complexos",
+        "Otimizar performance e velocidade de resposta"
+      ]
+    },
+    {
+      "functionality": "Automação de Workflows",
+      "priority_score": 10.0,
+      "issues_count": 0,
+      "recommended_actions": [
+        "Melhorar integração com sistemas externos",
+        "Refinar algoritmos para maior precisão",
+        "Adicionar mais templates pré-configurados"
+      ]
+    },
+    {
+      "functionality": "Assistente Virtual Jurídico",
+      "priority_score": 10.0,
+      "issues_count": 0,
+      "recommended_actions": [
+        "Implementar respostas mais concisas",
+        "Atualizar base de conhecimento jurisprudencial",
+        "Refinar algoritmos para maior precisão"
+      ]
+    },
+    {
+      "functionality": "Analytics Jurídico",
+      "priority_score": 10.0,
+      "issues_count": 0,
+      "recommended_actions": [
+        "Refinar algoritmos para maior precisão",
+        "Implementar comparações com benchmarks do mercado",
+        "Adicionar mais métricas e KPIs"
+      ]
+    }
+  ],
+  "user_satisfaction_trends": {}
+}

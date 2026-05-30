@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "description": "Única versão por domínio — não editar duplicatas em legacy/",
+  "modules": {
+    "document_analysis": {
+      "source": "enhanced_document_analyzer.py",
+      "service": "services/documents",
+      "skill": "analise-documental-brasil"
+    },
+    "document_generation": {
+      "source": "enhanced_document_generator.py",
+      "validator_extract_from": "advanced_document_features.py",
+      "service": "services/documents",
+      "skill": "geracao-pecas-advocacia"
+    },
+    "intelligent_search": {
+      "source": "enhanced_intelligent_search.py",
+      "service": "services/search",
+      "skill": "pesquisa-normativa-brasil"
+    },
+    "legal_calculator": {
+      "source": "enhanced_legal_calculator.py",
+      "service": "services/calculator",
+      "skill": null
+    },
+    "deadlines": {
+      "source": "deadline_manager.py",
+      "service": "services/deadlines",
+      "skill": "prazos-processuais-brasil"
+    },
+    "workflows": {
+      "source": "enhanced_workflow_engine.py",
+      "service": "services/workflows",
+      "skill": null
+    },
+    "assistant": {
+      "source": "enhanced_virtual_assistant.py",
+      "service": "services/assistant",
+      "skill": null
+    },
+    "analytics": {
+      "source": "enhanced_analytics_engine.py",
+      "service": "services/analytics",
+      "skill": null
+    }
+  },
+  "prompt_registry": "config/mapa-fundamentos-prompt.json",
+  "legacy_archive": [
+    "ai_assistant.py",
+    "analytics_engine.py",
+    "document_generator.py",
+    "intelligent_search.py",
+    "legal_calculator.py",
+    "advanced_document_analyzer.py",
+    "advanced_workflow_engine.py",
+    "advanced_search_features.py",
+    "advanced_calculator_features.py",
+    "advanced_analytics_features.py"
+  ]
+}

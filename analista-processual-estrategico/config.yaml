@@ -1,0 +1,18 @@
+key: analista-processual-estrategico
+name: Analista Processual Estrategico
+version: 0.1.0
+domain: legal
+language: pt-BR
+entry_agent: analista-chief
+risk_level: high
+requires_hitl: true
+outputs:
+  - relatorio_estrategico
+  - timeline_processual
+  - mapa_partes
+  - minuta_peca
+quality_gates:
+  - inventario_completo
+  - fontes_verificaveis
+  - due_diligence_output
+  - revisao_humana

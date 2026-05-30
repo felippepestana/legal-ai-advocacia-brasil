@@ -1,0 +1,18 @@
+{
+  "description": "Few-shot para análise documental — petição inicial (fundamento #7 e #18)",
+  "input_excerpt": "EXCELENTÍSSIMO SENHOR DOUTOR JUIZ DE DIREITO DA 1ª VARA CÍVEL...\nJOÃO DA SILVA, brasileiro, casado, CPF 123.456.789-00...\nrequer a condenação da ré ao pagamento de R$ 50.000,00...",
+  "output_excerpt": {
+    "document_type": "peticao_inicial",
+    "legal_area": "civil",
+    "confidence": 0.88,
+    "entities": [
+      { "type": "cpf", "text": "123.456.789-00", "confidence": 0.95 },
+      { "type": "valor_monetario", "text": "R$ 50.000,00", "confidence": 0.98 }
+    ],
+    "gaps": [
+      "Confirmar opção expressa por audiência de conciliação (art. 319, VII, CPC)",
+      "Verificar indicação completa de provas"
+    ],
+    "summary": "Ação de cobrança proposta por pessoa física contra réu não qualificado no trecho, pedido de R$ 50.000,00."
+  }
+}

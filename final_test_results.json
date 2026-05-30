@@ -1,0 +1,99 @@
+{
+  "timestamp": "2025-09-14T20:38:08.053995",
+  "total_tests": 7,
+  "passed_tests": 4,
+  "failed_tests": 3,
+  "test_details": [
+    {
+      "name": "Funcionalidades Avançadas de Pesquisa",
+      "status": "PASSED",
+      "execution_time": 5.469045162200928,
+      "timestamp": "2025-09-14T20:38:13.523101"
+    },
+    {
+      "name": "Funcionalidades Avançadas da Calculadora",
+      "status": "PASSED",
+      "execution_time": 0.000347137451171875,
+      "timestamp": "2025-09-14T20:38:13.523472"
+    },
+    {
+      "name": "Funcionalidades Avançadas de Analytics",
+      "status": "FAILED",
+      "execution_time": 1.6927719116210938e-05,
+      "timestamp": "2025-09-14T20:38:13.523507"
+    },
+    {
+      "name": "Funcionalidades Avançadas de Documentos",
+      "status": "FAILED",
+      "execution_time": 5.9604644775390625e-06,
+      "timestamp": "2025-09-14T20:38:13.523530"
+    },
+    {
+      "name": "Integração entre Funcionalidades",
+      "status": "PASSED",
+      "execution_time": 2.9734139442443848,
+      "timestamp": "2025-09-14T20:38:16.496967"
+    },
+    {
+      "name": "Benchmarks de Performance",
+      "status": "PASSED",
+      "execution_time": 0.05201888084411621,
+      "timestamp": "2025-09-14T20:38:16.549026"
+    },
+    {
+      "name": "Tratamento de Erros",
+      "status": "FAILED",
+      "execution_time": 6.457964658737183,
+      "timestamp": "2025-09-14T20:38:23.007032"
+    }
+  ],
+  "performance_metrics": {
+    "search_avg_time": 0.010153865814208985,
+    "calculation_avg_time": 8.106231689453125e-05
+  },
+  "coverage_report": {
+    "modules_tested": [
+      "advanced_search_features",
+      "advanced_calculator_features",
+      "advanced_analytics_features",
+      "advanced_document_features"
+    ],
+    "functionality_coverage": {
+      "search": [
+        "basic_search",
+        "filtered_search",
+        "analytics"
+      ],
+      "calculator": [
+        "rescisao",
+        "danos_morais",
+        "horas_extras",
+        "statistics"
+      ],
+      "analytics": [
+        "reports",
+        "predictions",
+        "benchmarks"
+      ],
+      "documents": [
+        "generation",
+        "validation",
+        "templates"
+      ],
+      "integration": [
+        "search_calc_flow",
+        "error_handling"
+      ],
+      "performance": [
+        "speed_tests",
+        "load_tests"
+      ]
+    },
+    "test_categories": {
+      "unit_tests": 4,
+      "integration_tests": 1,
+      "performance_tests": 1,
+      "error_handling_tests": 1
+    }
+  }
+}

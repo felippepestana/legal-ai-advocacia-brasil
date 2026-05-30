@@ -1,0 +1,34 @@
+---
+description: Regras core para desenvolvimento da plataforma de advocacia brasileira e análise documental
+globs:
+  - "**/*.py"
+  - "**/*.ts"
+  - "**/*.tsx"
+  - "advocacia-brasil-hub/**"
+alwaysApply: false
+---
+
+# Advocacia Brasil — regras de engenharia
+
+## Fonte da verdade
+
+- Ontologia: `advocacia-brasil-hub/ontology/*.yaml`
+- Módulos canônicos: `advocacia-brasil-hub/config/modulos-canonicos.json`
+- Não criar terceira versão de um domínio (proibido `advanced_*` + `enhanced_*` + base).
+
+## Ordenamento jurídico
+
+- Usar terminologia do CPC/CLT/CDC conforme área em `ontology/areas-direito.yaml`
+- Prazos: dias úteis + feriados BR (`deadline_manager` / `prazos-processuais.yaml`)
+- Petição inicial: validar requisitos do art. 319 CPC antes de sugerir protocolo
+
+## IA e compliance
+
+- Peças geradas exigem revisão humana; incluir disclaimer
+- Seguir `advocacia-brasil-hub/docs/governanca-dados-lgpd.md` em uploads e logs
+- Abstrair provedor LLM (Vertex/Gemini); não chamar OpenAI direto em código novo
+
+## Integração
+
+- Frontend só fala com API; Python de negócio não fica acoplado a paths `/home/ubuntu`
+- Contratos de API em `advocacia-brasil-hub/schemas/`

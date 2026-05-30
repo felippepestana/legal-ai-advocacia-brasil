@@ -1,0 +1,49 @@
+{
+  "document_analysis": {
+    "tests_run": 10,
+    "tests_passed": 10,
+    "tests_failed": 0,
+    "performance_metrics": {
+      "durations": {
+        "classification_peticao_simples.txt": 4.019955635070801,
+        "classification_contestacao_complexa.txt": 2.96606183052063,
+        "classification_sentenca_procedente.txt": 3.1204912662506104,
+        "classification_intimacao_prazo.txt": 3.107419013977051,
+        "classification_documento_sem_tipo.txt": 2.9563214778900146,
+        "entities_peticao_simples.txt": 3.058626413345337,
+        "entities_contestacao_complexa.txt": 2.9311165809631348,
+        "entities_sentenca_procedente.txt": 3.235546350479126,
+        "performance_test": 3.133476972579956,
+        "error_handling_missing_file": 9.584426879882812e-05
+      },
+      "avg_duration": 3.133476972579956,
+      "max_duration": 3.320206642150879,
+      "min_duration": 3.0003931522369385,
+      "samples": 5
+    },
+    "errors": []
+  },
+  "workflow_automation": {
+    "tests_run": 4,
+    "tests_passed": 4,
+    "tests_failed": 0,
+    "performance_metrics": {
+      "durations": {
+        "workflow_creation": 0.00011420249938964844,
+        "workflow_execution": 2.000631093978882,
+        "performance_test": 0.5008372306823731,
+        "error_handling_missing_workflow": 1.3589859008789062e-05
+      },
+      "avg_duration": 0.5008372306823731,
+      "success_rate": 1.0,
+      "successful_executions": 10,
+      "total_attempts": 10
+    },
+    "errors": []
+  },
+  "overall": {
+    "start_time": "2025-09-12 10:36:02.411817",
+    "end_time": "2025-09-12 10:36:50.549116",
+    "total_duration": 48.137299
+  }
+}

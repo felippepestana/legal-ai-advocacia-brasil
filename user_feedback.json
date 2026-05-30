@@ -1,0 +1,1987 @@
+{
+  "collection_timestamp": "2025-09-12T17:50:20.655234",
+  "total_users": 5,
+  "functionalities": {
+    "Análise Inteligente de Documentos": [
+      {
+        "session_id": "998cf697-2c9e-4ff2-b9bf-f222fc3b4437",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Análise Inteligente de Documentos",
+        "timestamp": "2025-09-12T17:50:20.655283",
+        "duration_minutes": 10.305037909841047,
+        "tasks_completed": 8,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.6,
+        "accuracy_perception": 8.7,
+        "speed_perception": 7.9,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "As recomendações da IA são úteis, mas às vezes muito genéricas",
+          "Gostaria que identificasse mais conceitos específicos da minha área de atuação"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Refinar algoritmos para maior precisão",
+          "Expandir base de conhecimento jurídico"
+        ]
+      },
+      {
+        "session_id": "bed949c5-680c-4fa3-8004-c799faa9318c",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Análise Inteligente de Documentos",
+        "timestamp": "2025-09-12T17:50:20.655347",
+        "duration_minutes": 11.97934947949442,
+        "tasks_completed": 6,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.1,
+        "accuracy_perception": 9.4,
+        "speed_perception": 8.5,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Gostaria que identificasse mais conceitos específicos da minha área de atuação",
+          "A extração de entidades está muito precisa, economizou muito tempo na análise inicial"
+        ],
+        "improvement_suggestions": [
+          "Melhorar reconhecimento de documentos complexos"
+        ]
+      },
+      {
+        "session_id": "3b612948-60d7-4ba9-b757-43f2b619da41",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Análise Inteligente de Documentos",
+        "timestamp": "2025-09-12T17:50:20.655380",
+        "duration_minutes": 14.455101384639155,
+        "tasks_completed": 8,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.1,
+        "accuracy_perception": 9.2,
+        "speed_perception": 8.9,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "As recomendações da IA são úteis, mas às vezes muito genéricas",
+          "A extração de entidades está muito precisa, economizou muito tempo na análise inicial"
+        ],
+        "improvement_suggestions": [
+          "Melhorar reconhecimento de documentos complexos"
+        ]
+      },
+      {
+        "session_id": "ff3dac58-6a10-4100-9883-0678033a494e",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Análise Inteligente de Documentos",
+        "timestamp": "2025-09-12T17:50:20.655403",
+        "duration_minutes": 35.29690895553275,
+        "tasks_completed": 4,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.1,
+        "accuracy_perception": 8.3,
+        "speed_perception": 7.7,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Gostaria que identificasse mais conceitos específicos da minha área de atuação",
+          "As recomendações da IA são úteis, mas às vezes muito genéricas"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Refinar algoritmos para maior precisão",
+          "Melhorar reconhecimento de documentos complexos"
+        ]
+      },
+      {
+        "session_id": "7c58eb12-ee8b-49c7-ba07-50db6478048c",
+        "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+        "functionality": "Análise Inteligente de Documentos",
+        "timestamp": "2025-09-12T17:50:20.655431",
+        "duration_minutes": 16.6688702431019,
+        "tasks_completed": 4,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.4,
+        "accuracy_perception": 9.6,
+        "speed_perception": 9.0,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+          "name": "Dra. Paula Lima",
+          "role": "Advogada Trabalhista",
+          "experience_years": 8,
+          "specialization": "Direito Trabalhista",
+          "firm_size": "Médio",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Gostaria que identificasse mais conceitos específicos da minha área de atuação",
+          "A extração de entidades está muito precisa, economizou muito tempo na análise inicial"
+        ],
+        "improvement_suggestions": [
+          "Expandir base de conhecimento jurídico"
+        ]
+      },
+      {
+        "session_id": "83dca8ea-13b5-4fd0-86b5-2142712d7401",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Análise Inteligente de Documentos",
+        "timestamp": "2025-09-12T17:50:20.655451",
+        "duration_minutes": 11.273718245253495,
+        "tasks_completed": 7,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.6,
+        "accuracy_perception": 8.2,
+        "speed_perception": 8.2,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "A extração de entidades está muito precisa, economizou muito tempo na análise inicial",
+          "As recomendações da IA são úteis, mas às vezes muito genéricas"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Melhorar reconhecimento de documentos complexos"
+        ]
+      },
+      {
+        "session_id": "67560801-2c81-487e-a9d9-4285588ddfa7",
+        "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+        "functionality": "Análise Inteligente de Documentos",
+        "timestamp": "2025-09-12T17:50:20.655471",
+        "duration_minutes": 37.43642790605506,
+        "tasks_completed": 8,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.1,
+        "accuracy_perception": 8.3,
+        "speed_perception": 7.7,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+          "name": "Dra. Paula Lima",
+          "role": "Advogada Trabalhista",
+          "experience_years": 8,
+          "specialization": "Direito Trabalhista",
+          "firm_size": "Médio",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Gostaria que identificasse mais conceitos específicos da minha área de atuação",
+          "A extração de entidades está muito precisa, economizou muito tempo na análise inicial"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Refinar algoritmos para maior precisão",
+          "Melhorar reconhecimento de documentos complexos"
+        ]
+      },
+      {
+        "session_id": "138566b2-6fc6-48a6-9551-e59f7b2dd83f",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Análise Inteligente de Documentos",
+        "timestamp": "2025-09-12T17:50:20.655510",
+        "duration_minutes": 33.532276982747106,
+        "tasks_completed": 8,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.0,
+        "accuracy_perception": 8.9,
+        "speed_perception": 8.2,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Gostaria que identificasse mais conceitos específicos da minha área de atuação",
+          "A extração de entidades está muito precisa, economizou muito tempo na análise inicial"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Expandir base de conhecimento jurídico"
+        ]
+      }
+    ],
+    "Automação de Workflows": [
+      {
+        "session_id": "0ec27ea1-fde9-4a67-82c4-636c50f4da33",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Automação de Workflows",
+        "timestamp": "2025-09-12T17:50:20.655553",
+        "duration_minutes": 30.344348196116357,
+        "tasks_completed": 8,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.5,
+        "accuracy_perception": 9.2,
+        "speed_perception": 8.6,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Precisa de mais templates prontos para diferentes tipos de processo",
+          "Os workflows personalizáveis são um diferencial, adaptei perfeitamente ao meu escritório"
+        ],
+        "improvement_suggestions": [
+          "Melhorar integração com sistemas externos"
+        ]
+      },
+      {
+        "session_id": "c2e45ffc-067e-482e-9bbd-44a9ac611f64",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Automação de Workflows",
+        "timestamp": "2025-09-12T17:50:20.655572",
+        "duration_minutes": 17.847015849429667,
+        "tasks_completed": 4,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.8,
+        "accuracy_perception": 8.2,
+        "speed_perception": 9.0,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "A automação de tarefas repetitivas aumentou muito minha produtividade",
+          "Os workflows personalizáveis são um diferencial, adaptei perfeitamente ao meu escritório"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Melhorar integração com sistemas externos"
+        ]
+      },
+      {
+        "session_id": "e3dd0421-d248-4c39-96a5-30f854295a86",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Automação de Workflows",
+        "timestamp": "2025-09-12T17:50:20.655589",
+        "duration_minutes": 43.89726829997405,
+        "tasks_completed": 3,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.1,
+        "accuracy_perception": 9.6,
+        "speed_perception": 8.6,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "A automação de tarefas repetitivas aumentou muito minha produtividade",
+          "Precisa de mais templates prontos para diferentes tipos de processo"
+        ],
+        "improvement_suggestions": [
+          "Melhorar integração com sistemas externos"
+        ]
+      },
+      {
+        "session_id": "c44245f3-47de-4b01-9456-3fe0cf2e8a39",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Automação de Workflows",
+        "timestamp": "2025-09-12T17:50:20.655604",
+        "duration_minutes": 21.303856538394466,
+        "tasks_completed": 3,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.8,
+        "accuracy_perception": 9.5,
+        "speed_perception": 7.9,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Precisa de mais templates prontos para diferentes tipos de processo",
+          "A automação de tarefas repetitivas aumentou muito minha produtividade"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Melhorar integração com sistemas externos"
+        ]
+      },
+      {
+        "session_id": "4dfd7d4e-bafb-485a-a8af-309b35ddee40",
+        "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+        "functionality": "Automação de Workflows",
+        "timestamp": "2025-09-12T17:50:20.655619",
+        "duration_minutes": 15.0233772590569,
+        "tasks_completed": 8,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.5,
+        "accuracy_perception": 8.2,
+        "speed_perception": 8.4,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+          "name": "Dr. João Silva",
+          "role": "Advogado Autônomo",
+          "experience_years": 5,
+          "specialization": "Direito do Consumidor",
+          "firm_size": "Pequeno",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Precisa de mais templates prontos para diferentes tipos de processo",
+          "Os workflows personalizáveis são um diferencial, adaptei perfeitamente ao meu escritório"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Melhorar integração com sistemas externos"
+        ]
+      },
+      {
+        "session_id": "57f879f2-6808-4f4b-9b88-174a0b23185d",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Automação de Workflows",
+        "timestamp": "2025-09-12T17:50:20.655634",
+        "duration_minutes": 31.852124702601493,
+        "tasks_completed": 6,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.7,
+        "accuracy_perception": 9.3,
+        "speed_perception": 9.2,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Precisa de mais templates prontos para diferentes tipos de processo",
+          "A automação de tarefas repetitivas aumentou muito minha produtividade"
+        ],
+        "improvement_suggestions": [
+          "Adicionar mais templates pré-configurados"
+        ]
+      },
+      {
+        "session_id": "2cbaf6ff-56dd-40a3-b12f-23d3e3031129",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Automação de Workflows",
+        "timestamp": "2025-09-12T17:50:20.655649",
+        "duration_minutes": 23.64703470778016,
+        "tasks_completed": 7,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.9,
+        "accuracy_perception": 9.3,
+        "speed_perception": 8.1,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Precisa de mais templates prontos para diferentes tipos de processo",
+          "Os workflows personalizáveis são um diferencial, adaptei perfeitamente ao meu escritório"
+        ],
+        "improvement_suggestions": [
+          "Melhorar integração com sistemas externos"
+        ]
+      },
+      {
+        "session_id": "cdd766fa-d458-402e-a5ae-9a7fab471a1d",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Automação de Workflows",
+        "timestamp": "2025-09-12T17:50:20.655672",
+        "duration_minutes": 9.045235229381872,
+        "tasks_completed": 1,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.8,
+        "accuracy_perception": 8.7,
+        "speed_perception": 8.1,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os workflows personalizáveis são um diferencial, adaptei perfeitamente ao meu escritório",
+          "A automação de tarefas repetitivas aumentou muito minha produtividade"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Adicionar mais templates pré-configurados"
+        ]
+      }
+    ],
+    "Assistente Virtual Jurídico": [
+      {
+        "session_id": "884e658a-30de-4746-8e6c-7309976999c9",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Assistente Virtual Jurídico",
+        "timestamp": "2025-09-12T17:50:20.655699",
+        "duration_minutes": 42.05556489134406,
+        "tasks_completed": 7,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.6,
+        "accuracy_perception": 9.4,
+        "speed_perception": 8.8,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "O assistente entende bem as perguntas jurídicas, muito melhor que chatbots genéricos",
+          "Excelente para esclarecer dúvidas rápidas durante a redação de peças"
+        ],
+        "improvement_suggestions": [
+          "Atualizar base de conhecimento jurisprudencial"
+        ]
+      },
+      {
+        "session_id": "714653b6-b32d-4475-a033-47c500f0c0cd",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Assistente Virtual Jurídico",
+        "timestamp": "2025-09-12T17:50:20.655715",
+        "duration_minutes": 44.34706283124146,
+        "tasks_completed": 3,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.8,
+        "accuracy_perception": 9.0,
+        "speed_perception": 9.1,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Excelente para esclarecer dúvidas rápidas durante a redação de peças",
+          "O assistente entende bem as perguntas jurídicas, muito melhor que chatbots genéricos"
+        ],
+        "improvement_suggestions": [
+          "Atualizar base de conhecimento jurisprudencial"
+        ]
+      },
+      {
+        "session_id": "5dfa5512-be0f-4aa3-8159-c9fd5153d546",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Assistente Virtual Jurídico",
+        "timestamp": "2025-09-12T17:50:20.655729",
+        "duration_minutes": 8.63078295285967,
+        "tasks_completed": 1,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.2,
+        "accuracy_perception": 9.4,
+        "speed_perception": 8.2,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Às vezes as respostas são muito longas, preferia respostas mais diretas",
+          "Excelente para esclarecer dúvidas rápidas durante a redação de peças"
+        ],
+        "improvement_suggestions": [
+          "Implementar respostas mais concisas"
+        ]
+      },
+      {
+        "session_id": "bcc8704c-1826-4243-8139-18acd3dd7969",
+        "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+        "functionality": "Assistente Virtual Jurídico",
+        "timestamp": "2025-09-12T17:50:20.655744",
+        "duration_minutes": 17.69526557170211,
+        "tasks_completed": 3,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.9,
+        "accuracy_perception": 8.9,
+        "speed_perception": 8.2,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+          "name": "Dra. Paula Lima",
+          "role": "Advogada Trabalhista",
+          "experience_years": 8,
+          "specialization": "Direito Trabalhista",
+          "firm_size": "Médio",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Às vezes as respostas são muito longas, preferia respostas mais diretas",
+          "O assistente entende bem as perguntas jurídicas, muito melhor que chatbots genéricos"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Implementar respostas mais concisas"
+        ]
+      },
+      {
+        "session_id": "4da983cf-2cc2-412e-abf6-dd9114ffedc4",
+        "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+        "functionality": "Assistente Virtual Jurídico",
+        "timestamp": "2025-09-12T17:50:20.655758",
+        "duration_minutes": 12.546746696887197,
+        "tasks_completed": 7,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.7,
+        "accuracy_perception": 9.6,
+        "speed_perception": 8.7,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+          "name": "Dra. Paula Lima",
+          "role": "Advogada Trabalhista",
+          "experience_years": 8,
+          "specialization": "Direito Trabalhista",
+          "firm_size": "Médio",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Às vezes as respostas são muito longas, preferia respostas mais diretas",
+          "O assistente entende bem as perguntas jurídicas, muito melhor que chatbots genéricos"
+        ],
+        "improvement_suggestions": [
+          "Implementar respostas mais concisas"
+        ]
+      },
+      {
+        "session_id": "e7f80578-a718-4111-b0d8-2bf3697750a5",
+        "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+        "functionality": "Assistente Virtual Jurídico",
+        "timestamp": "2025-09-12T17:50:20.655775",
+        "duration_minutes": 32.883786588164625,
+        "tasks_completed": 1,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.4,
+        "accuracy_perception": 8.2,
+        "speed_perception": 8.7,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+          "name": "Dra. Paula Lima",
+          "role": "Advogada Trabalhista",
+          "experience_years": 8,
+          "specialization": "Direito Trabalhista",
+          "firm_size": "Médio",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Excelente para esclarecer dúvidas rápidas durante a redação de peças",
+          "O assistente entende bem as perguntas jurídicas, muito melhor que chatbots genéricos"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Atualizar base de conhecimento jurisprudencial"
+        ]
+      },
+      {
+        "session_id": "c54b08ed-172c-4078-9d7e-bcc7a933b73a",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Assistente Virtual Jurídico",
+        "timestamp": "2025-09-12T17:50:20.655790",
+        "duration_minutes": 41.846665448595814,
+        "tasks_completed": 7,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.9,
+        "accuracy_perception": 9.4,
+        "speed_perception": 8.5,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Excelente para esclarecer dúvidas rápidas durante a redação de peças",
+          "Às vezes as respostas são muito longas, preferia respostas mais diretas"
+        ],
+        "improvement_suggestions": [
+          "Implementar respostas mais concisas"
+        ]
+      },
+      {
+        "session_id": "8bbb2004-f6d8-4081-9353-171cec79aa47",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Assistente Virtual Jurídico",
+        "timestamp": "2025-09-12T17:50:20.655804",
+        "duration_minutes": 37.249093549772645,
+        "tasks_completed": 4,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.4,
+        "accuracy_perception": 8.9,
+        "speed_perception": 8.5,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "O assistente entende bem as perguntas jurídicas, muito melhor que chatbots genéricos",
+          "Excelente para esclarecer dúvidas rápidas durante a redação de peças"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Implementar respostas mais concisas"
+        ]
+      }
+    ],
+    "Gestão Inteligente de Prazos": [
+      {
+        "session_id": "06707b29-b499-4a6e-b19b-72cb5605344a",
+        "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+        "functionality": "Gestão Inteligente de Prazos",
+        "timestamp": "2025-09-12T17:50:20.655827",
+        "duration_minutes": 31.02273072432881,
+        "tasks_completed": 7,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.0,
+        "accuracy_perception": 8.2,
+        "speed_perception": 7.9,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+          "name": "Dra. Paula Lima",
+          "role": "Advogada Trabalhista",
+          "experience_years": 8,
+          "specialization": "Direito Trabalhista",
+          "firm_size": "Médio",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Gostaria de integração com meu calendário pessoal",
+          "Nunca mais perdi um prazo desde que comecei a usar, é fundamental"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Refinar algoritmos para maior precisão",
+          "Adicionar integração com calendários externos"
+        ]
+      },
+      {
+        "session_id": "6c632e2f-00df-4621-b004-82914b00eb22",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Gestão Inteligente de Prazos",
+        "timestamp": "2025-09-12T17:50:20.655843",
+        "duration_minutes": 38.802763859771765,
+        "tasks_completed": 3,
+        "satisfaction_score": 9.9,
+        "ease_of_use": 8.1,
+        "accuracy_perception": 9.5,
+        "speed_perception": 9.2,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os alertas chegam no momento certo, nem muito cedo nem muito tarde",
+          "Nunca mais perdi um prazo desde que comecei a usar, é fundamental"
+        ],
+        "improvement_suggestions": [
+          "Melhorar categorização de tipos de prazo"
+        ]
+      },
+      {
+        "session_id": "d5feffa1-fc16-4f11-9b0d-6670354ba1bf",
+        "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+        "functionality": "Gestão Inteligente de Prazos",
+        "timestamp": "2025-09-12T17:50:20.655861",
+        "duration_minutes": 5.45395890574337,
+        "tasks_completed": 3,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.7,
+        "accuracy_perception": 9.5,
+        "speed_perception": 8.5,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+          "name": "Dra. Paula Lima",
+          "role": "Advogada Trabalhista",
+          "experience_years": 8,
+          "specialization": "Direito Trabalhista",
+          "firm_size": "Médio",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Os alertas chegam no momento certo, nem muito cedo nem muito tarde",
+          "Nunca mais perdi um prazo desde que comecei a usar, é fundamental"
+        ],
+        "improvement_suggestions": [
+          "Adicionar integração com calendários externos"
+        ]
+      },
+      {
+        "session_id": "0b92aa2b-9e28-47dd-a8a9-afc2b016c4f2",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Gestão Inteligente de Prazos",
+        "timestamp": "2025-09-12T17:50:20.655875",
+        "duration_minutes": 16.11765260393863,
+        "tasks_completed": 5,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.3,
+        "accuracy_perception": 9.6,
+        "speed_perception": 7.6,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Gostaria de integração com meu calendário pessoal",
+          "Os alertas chegam no momento certo, nem muito cedo nem muito tarde"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Adicionar integração com calendários externos"
+        ]
+      },
+      {
+        "session_id": "de6743fd-63da-41d9-a2e3-ffc940949c9f",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Gestão Inteligente de Prazos",
+        "timestamp": "2025-09-12T17:50:20.655889",
+        "duration_minutes": 20.765821523349118,
+        "tasks_completed": 7,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.4,
+        "accuracy_perception": 8.0,
+        "speed_perception": 8.0,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Nunca mais perdi um prazo desde que comecei a usar, é fundamental",
+          "Gostaria de integração com meu calendário pessoal"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Melhorar categorização de tipos de prazo"
+        ]
+      },
+      {
+        "session_id": "510d3937-1725-4fac-92d1-6c29cf6879c9",
+        "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+        "functionality": "Gestão Inteligente de Prazos",
+        "timestamp": "2025-09-12T17:50:20.655903",
+        "duration_minutes": 25.32585058964616,
+        "tasks_completed": 5,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.6,
+        "accuracy_perception": 9.2,
+        "speed_perception": 8.3,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+          "name": "Dra. Paula Lima",
+          "role": "Advogada Trabalhista",
+          "experience_years": 8,
+          "specialization": "Direito Trabalhista",
+          "firm_size": "Médio",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Nunca mais perdi um prazo desde que comecei a usar, é fundamental",
+          "Gostaria de integração com meu calendário pessoal"
+        ],
+        "improvement_suggestions": [
+          "Melhorar categorização de tipos de prazo"
+        ]
+      },
+      {
+        "session_id": "61f478e3-6144-4cd8-8710-1a1a441a8eca",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Gestão Inteligente de Prazos",
+        "timestamp": "2025-09-12T17:50:20.655917",
+        "duration_minutes": 12.304556084870457,
+        "tasks_completed": 6,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.7,
+        "accuracy_perception": 9.5,
+        "speed_perception": 8.5,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os alertas chegam no momento certo, nem muito cedo nem muito tarde",
+          "Nunca mais perdi um prazo desde que comecei a usar, é fundamental"
+        ],
+        "improvement_suggestions": [
+          "Adicionar integração com calendários externos"
+        ]
+      },
+      {
+        "session_id": "32f70f8a-93f1-4685-bcf0-8335a57cbbbd",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Gestão Inteligente de Prazos",
+        "timestamp": "2025-09-12T17:50:20.655931",
+        "duration_minutes": 12.694477133972054,
+        "tasks_completed": 4,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.4,
+        "accuracy_perception": 8.3,
+        "speed_perception": 8.9,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os alertas chegam no momento certo, nem muito cedo nem muito tarde",
+          "Gostaria de integração com meu calendário pessoal"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Melhorar categorização de tipos de prazo"
+        ]
+      }
+    ],
+    "Analytics Jurídico": [
+      {
+        "session_id": "cd91f488-e3c2-4f80-adc7-f0f5b6f48d75",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Analytics Jurídico",
+        "timestamp": "2025-09-12T17:50:20.655955",
+        "duration_minutes": 13.525050903535494,
+        "tasks_completed": 4,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.2,
+        "accuracy_perception": 8.1,
+        "speed_perception": 8.7,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Os insights sobre performance me ajudam a tomar decisões estratégicas",
+          "Gostaria de mais comparações com dados do mercado"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Implementar comparações com benchmarks do mercado"
+        ]
+      },
+      {
+        "session_id": "de9fcdc2-8517-46f8-ba0b-452150f2680a",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Analytics Jurídico",
+        "timestamp": "2025-09-12T17:50:20.655970",
+        "duration_minutes": 27.33694130920761,
+        "tasks_completed": 5,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.5,
+        "accuracy_perception": 9.4,
+        "speed_perception": 8.4,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os insights sobre performance me ajudam a tomar decisões estratégicas",
+          "Gostaria de mais comparações com dados do mercado"
+        ],
+        "improvement_suggestions": [
+          "Adicionar mais métricas e KPIs"
+        ]
+      },
+      {
+        "session_id": "d33fe2ff-e71a-409d-b738-7d49bc4350cb",
+        "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+        "functionality": "Analytics Jurídico",
+        "timestamp": "2025-09-12T17:50:20.655984",
+        "duration_minutes": 21.899809295559237,
+        "tasks_completed": 1,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.4,
+        "accuracy_perception": 8.7,
+        "speed_perception": 7.5,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+          "name": "Dr. João Silva",
+          "role": "Advogado Autônomo",
+          "experience_years": 5,
+          "specialization": "Direito do Consumidor",
+          "firm_size": "Pequeno",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Gostaria de mais comparações com dados do mercado",
+          "Os insights sobre performance me ajudam a tomar decisões estratégicas"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Refinar algoritmos para maior precisão",
+          "Implementar comparações com benchmarks do mercado"
+        ]
+      },
+      {
+        "session_id": "a633ea84-0110-488e-9920-5a15bbf60c21",
+        "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+        "functionality": "Analytics Jurídico",
+        "timestamp": "2025-09-12T17:50:20.655997",
+        "duration_minutes": 32.108842092217365,
+        "tasks_completed": 2,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.8,
+        "accuracy_perception": 8.4,
+        "speed_perception": 8.7,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+          "name": "Dra. Paula Lima",
+          "role": "Advogada Trabalhista",
+          "experience_years": 8,
+          "specialization": "Direito Trabalhista",
+          "firm_size": "Médio",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Gostaria de mais comparações com dados do mercado",
+          "Os gráficos são claros e informativos"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Adicionar mais métricas e KPIs"
+        ]
+      },
+      {
+        "session_id": "3af1b79b-c49f-4130-bb8c-52988d3beeef",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Analytics Jurídico",
+        "timestamp": "2025-09-12T17:50:20.656015",
+        "duration_minutes": 37.648024138860855,
+        "tasks_completed": 4,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.0,
+        "accuracy_perception": 8.5,
+        "speed_perception": 8.7,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Gostaria de mais comparações com dados do mercado",
+          "Os gráficos são claros e informativos"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Implementar comparações com benchmarks do mercado"
+        ]
+      },
+      {
+        "session_id": "9b5ff776-8bda-4d4d-a6b7-bd5afe5999eb",
+        "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+        "functionality": "Analytics Jurídico",
+        "timestamp": "2025-09-12T17:50:20.656029",
+        "duration_minutes": 42.131470802031984,
+        "tasks_completed": 4,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.1,
+        "accuracy_perception": 9.0,
+        "speed_perception": 9.1,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+          "name": "Dr. João Silva",
+          "role": "Advogado Autônomo",
+          "experience_years": 5,
+          "specialization": "Direito do Consumidor",
+          "firm_size": "Pequeno",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os gráficos são claros e informativos",
+          "Gostaria de mais comparações com dados do mercado"
+        ],
+        "improvement_suggestions": [
+          "Implementar comparações com benchmarks do mercado"
+        ]
+      },
+      {
+        "session_id": "b0426fa2-8839-4455-acc3-9ae954dddec9",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Analytics Jurídico",
+        "timestamp": "2025-09-12T17:50:20.656043",
+        "duration_minutes": 37.8086502991053,
+        "tasks_completed": 3,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.8,
+        "accuracy_perception": 8.4,
+        "speed_perception": 8.9,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os gráficos são claros e informativos",
+          "Gostaria de mais comparações com dados do mercado"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Adicionar mais métricas e KPIs"
+        ]
+      },
+      {
+        "session_id": "bf4393dd-c040-4a59-8fa7-a2fe43f8cd72",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Analytics Jurídico",
+        "timestamp": "2025-09-12T17:50:20.656057",
+        "duration_minutes": 24.818799698213976,
+        "tasks_completed": 4,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.1,
+        "accuracy_perception": 8.9,
+        "speed_perception": 9.0,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Gostaria de mais comparações com dados do mercado",
+          "Os gráficos são claros e informativos"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Adicionar mais métricas e KPIs"
+        ]
+      }
+    ],
+    "Geração de Documentos": [
+      {
+        "session_id": "5e387aa6-10b3-4ac2-b1e7-7871442c0012",
+        "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+        "functionality": "Geração de Documentos",
+        "timestamp": "2025-09-12T17:50:20.656078",
+        "duration_minutes": 10.176999897980581,
+        "tasks_completed": 1,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.4,
+        "accuracy_perception": 9.6,
+        "speed_perception": 8.3,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+          "name": "Dr. João Silva",
+          "role": "Advogado Autônomo",
+          "experience_years": 5,
+          "specialization": "Direito do Consumidor",
+          "firm_size": "Pequeno",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os documentos gerados têm qualidade profissional",
+          "Economiza muito tempo na elaboração de peças padrão"
+        ],
+        "improvement_suggestions": [
+          "Melhorar personalização de documentos"
+        ]
+      },
+      {
+        "session_id": "2b08c30f-f8c3-4f44-8182-a01b762cdfc8",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Geração de Documentos",
+        "timestamp": "2025-09-12T17:50:20.656094",
+        "duration_minutes": 42.896294334844534,
+        "tasks_completed": 2,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.5,
+        "accuracy_perception": 8.7,
+        "speed_perception": 8.5,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Economiza muito tempo na elaboração de peças padrão",
+          "Os documentos gerados têm qualidade profissional"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Melhorar personalização de documentos"
+        ]
+      },
+      {
+        "session_id": "ebb01d14-43b1-4eb5-9c53-fb9baf66bb18",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Geração de Documentos",
+        "timestamp": "2025-09-12T17:50:20.656110",
+        "duration_minutes": 23.276639378841267,
+        "tasks_completed": 2,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.2,
+        "accuracy_perception": 8.5,
+        "speed_perception": 8.6,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os documentos gerados têm qualidade profissional",
+          "Economiza muito tempo na elaboração de peças padrão"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Melhorar personalização de documentos"
+        ]
+      },
+      {
+        "session_id": "3104705b-4393-40df-aedb-e5b93ea34f03",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Geração de Documentos",
+        "timestamp": "2025-09-12T17:50:20.656124",
+        "duration_minutes": 6.089161776219338,
+        "tasks_completed": 6,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.8,
+        "accuracy_perception": 9.2,
+        "speed_perception": 8.4,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Economiza muito tempo na elaboração de peças padrão",
+          "Os documentos gerados têm qualidade profissional"
+        ],
+        "improvement_suggestions": [
+          "Expandir biblioteca de templates"
+        ]
+      },
+      {
+        "session_id": "02b16534-6ef1-4f74-bc91-91b3f6a59510",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Geração de Documentos",
+        "timestamp": "2025-09-12T17:50:20.656144",
+        "duration_minutes": 17.852138414135446,
+        "tasks_completed": 7,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.1,
+        "accuracy_perception": 9.2,
+        "speed_perception": 7.7,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Economiza muito tempo na elaboração de peças padrão",
+          "Os documentos gerados têm qualidade profissional"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Melhorar personalização de documentos"
+        ]
+      },
+      {
+        "session_id": "c8fbdbc5-6bfc-41d7-92df-814b373bb5a8",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Geração de Documentos",
+        "timestamp": "2025-09-12T17:50:20.656158",
+        "duration_minutes": 7.858443417141157,
+        "tasks_completed": 8,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.8,
+        "accuracy_perception": 8.9,
+        "speed_perception": 9.0,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Precisa de mais templates para minha área específica",
+          "Os documentos gerados têm qualidade profissional"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Melhorar personalização de documentos"
+        ]
+      },
+      {
+        "session_id": "df191412-cf7a-49c0-bdab-fd8a378b4a0b",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Geração de Documentos",
+        "timestamp": "2025-09-12T17:50:20.656177",
+        "duration_minutes": 15.99668129244105,
+        "tasks_completed": 8,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.4,
+        "accuracy_perception": 9.2,
+        "speed_perception": 8.4,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Precisa de mais templates para minha área específica",
+          "Economiza muito tempo na elaboração de peças padrão"
+        ],
+        "improvement_suggestions": [
+          "Melhorar personalização de documentos"
+        ]
+      },
+      {
+        "session_id": "862c2f97-af1f-4b4d-b30c-1c66f79caf7b",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Geração de Documentos",
+        "timestamp": "2025-09-12T17:50:20.656191",
+        "duration_minutes": 32.42883000176781,
+        "tasks_completed": 3,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.3,
+        "accuracy_perception": 8.4,
+        "speed_perception": 7.7,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Economiza muito tempo na elaboração de peças padrão",
+          "Precisa de mais templates para minha área específica"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Refinar algoritmos para maior precisão",
+          "Expandir biblioteca de templates"
+        ]
+      }
+    ],
+    "Pesquisa Inteligente": [
+      {
+        "session_id": "6fa602ec-58cb-4f43-838c-ad6c27354e64",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Pesquisa Inteligente",
+        "timestamp": "2025-09-12T17:50:20.656212",
+        "duration_minutes": 21.532263008862476,
+        "tasks_completed": 5,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.9,
+        "accuracy_perception": 9.2,
+        "speed_perception": 8.5,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Encontra jurisprudência relevante muito mais rápido que pesquisa manual",
+          "Os resultados são bem organizados por relevância"
+        ],
+        "improvement_suggestions": [
+          "Adicionar mais fontes de dados"
+        ]
+      },
+      {
+        "session_id": "bdf68ed8-b83d-4377-b248-d0ce8dfe1027",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Pesquisa Inteligente",
+        "timestamp": "2025-09-12T17:50:20.656226",
+        "duration_minutes": 35.2538778628359,
+        "tasks_completed": 7,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.9,
+        "accuracy_perception": 8.4,
+        "speed_perception": 8.6,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Gostaria de mais filtros por tribunal e data",
+          "Encontra jurisprudência relevante muito mais rápido que pesquisa manual"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Implementar filtros avançados"
+        ]
+      },
+      {
+        "session_id": "9b494565-fb2b-4642-8390-9ab446ee8b93",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Pesquisa Inteligente",
+        "timestamp": "2025-09-12T17:50:20.656240",
+        "duration_minutes": 5.584752148976317,
+        "tasks_completed": 4,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.4,
+        "accuracy_perception": 9.8,
+        "speed_perception": 7.8,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Gostaria de mais filtros por tribunal e data",
+          "Encontra jurisprudência relevante muito mais rápido que pesquisa manual"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Implementar filtros avançados"
+        ]
+      },
+      {
+        "session_id": "5b401ceb-a4c5-468a-9009-fed2bd2c2547",
+        "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+        "functionality": "Pesquisa Inteligente",
+        "timestamp": "2025-09-12T17:50:20.656254",
+        "duration_minutes": 31.066542446256143,
+        "tasks_completed": 5,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.0,
+        "accuracy_perception": 9.7,
+        "speed_perception": 8.7,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+          "name": "Dr. João Silva",
+          "role": "Advogado Autônomo",
+          "experience_years": 5,
+          "specialization": "Direito do Consumidor",
+          "firm_size": "Pequeno",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Encontra jurisprudência relevante muito mais rápido que pesquisa manual",
+          "Os resultados são bem organizados por relevância"
+        ],
+        "improvement_suggestions": [
+          "Implementar filtros avançados"
+        ]
+      },
+      {
+        "session_id": "b794c940-df3a-459b-9ff6-30ed3509ed75",
+        "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+        "functionality": "Pesquisa Inteligente",
+        "timestamp": "2025-09-12T17:50:20.656267",
+        "duration_minutes": 11.063521283852204,
+        "tasks_completed": 5,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.5,
+        "accuracy_perception": 9.4,
+        "speed_perception": 8.5,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+          "name": "Dr. João Silva",
+          "role": "Advogado Autônomo",
+          "experience_years": 5,
+          "specialization": "Direito do Consumidor",
+          "firm_size": "Pequeno",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os resultados são bem organizados por relevância",
+          "Gostaria de mais filtros por tribunal e data"
+        ],
+        "improvement_suggestions": [
+          "Implementar filtros avançados"
+        ]
+      },
+      {
+        "session_id": "5e238efa-0866-470f-a8a2-ceb51d69fa8f",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Pesquisa Inteligente",
+        "timestamp": "2025-09-12T17:50:20.656280",
+        "duration_minutes": 37.81919923916954,
+        "tasks_completed": 3,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.3,
+        "accuracy_perception": 8.1,
+        "speed_perception": 8.6,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Gostaria de mais filtros por tribunal e data",
+          "Os resultados são bem organizados por relevância"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Adicionar mais fontes de dados"
+        ]
+      },
+      {
+        "session_id": "a7bba439-eaad-4175-8f95-785c9e11c363",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Pesquisa Inteligente",
+        "timestamp": "2025-09-12T17:50:20.656294",
+        "duration_minutes": 20.975681608973208,
+        "tasks_completed": 1,
+        "satisfaction_score": 10.0,
+        "ease_of_use": 7.5,
+        "accuracy_perception": 8.6,
+        "speed_perception": 8.6,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Gostaria de mais filtros por tribunal e data",
+          "Encontra jurisprudência relevante muito mais rápido que pesquisa manual"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Implementar filtros avançados"
+        ]
+      },
+      {
+        "session_id": "ef741cb2-5406-4e3f-ac83-62898d8b92ce",
+        "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+        "functionality": "Pesquisa Inteligente",
+        "timestamp": "2025-09-12T17:50:20.656310",
+        "duration_minutes": 8.576024082573106,
+        "tasks_completed": 7,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.2,
+        "accuracy_perception": 8.6,
+        "speed_perception": 9.2,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27b0ab67-9b8a-4090-8dc3-0b6db4a2fc36",
+          "name": "Dr. João Silva",
+          "role": "Advogado Autônomo",
+          "experience_years": 5,
+          "specialization": "Direito do Consumidor",
+          "firm_size": "Pequeno",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os resultados são bem organizados por relevância",
+          "Encontra jurisprudência relevante muito mais rápido que pesquisa manual"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Adicionar mais fontes de dados"
+        ]
+      }
+    ],
+    "Cálculos Jurídicos Avançados": [
+      {
+        "session_id": "9d903e2e-e521-4770-83df-eb4e683fe0c1",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Cálculos Jurídicos Avançados",
+        "timestamp": "2025-09-12T17:50:20.656337",
+        "duration_minutes": 25.850333582586057,
+        "tasks_completed": 5,
+        "satisfaction_score": 10,
+        "ease_of_use": 7.1,
+        "accuracy_perception": 9.6,
+        "speed_perception": 7.5,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Interface muito mais amigável que planilhas complexas",
+          "Gostaria de mais tipos de cálculo trabalhista"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Implementar explicações detalhadas das fórmulas"
+        ]
+      },
+      {
+        "session_id": "cb6cc555-438e-44fe-8548-a317d1661543",
+        "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+        "functionality": "Cálculos Jurídicos Avançados",
+        "timestamp": "2025-09-12T17:50:20.656352",
+        "duration_minutes": 41.18660614672508,
+        "tasks_completed": 7,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.2,
+        "accuracy_perception": 8.9,
+        "speed_perception": 8.2,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8e5de6bd-f853-433a-a75c-aaeee3115c09",
+          "name": "Dra. Paula Lima",
+          "role": "Advogada Trabalhista",
+          "experience_years": 8,
+          "specialization": "Direito Trabalhista",
+          "firm_size": "Médio",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Os cálculos são precisos e confiáveis",
+          "Gostaria de mais tipos de cálculo trabalhista"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Implementar explicações detalhadas das fórmulas"
+        ]
+      },
+      {
+        "session_id": "efccf1db-3a7e-4906-a932-09003fca2930",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Cálculos Jurídicos Avançados",
+        "timestamp": "2025-09-12T17:50:20.656366",
+        "duration_minutes": 11.712860308991315,
+        "tasks_completed": 1,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.5,
+        "accuracy_perception": 9.2,
+        "speed_perception": 9.1,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os cálculos são precisos e confiáveis",
+          "Gostaria de mais tipos de cálculo trabalhista"
+        ],
+        "improvement_suggestions": [
+          "Adicionar mais tipos de cálculo"
+        ]
+      },
+      {
+        "session_id": "74800f83-65c4-4edf-a815-50f34d94e9d5",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Cálculos Jurídicos Avançados",
+        "timestamp": "2025-09-12T17:50:20.656384",
+        "duration_minutes": 40.29836881941367,
+        "tasks_completed": 5,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.6,
+        "accuracy_perception": 9.0,
+        "speed_perception": 7.8,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Os cálculos são precisos e confiáveis",
+          "Gostaria de mais tipos de cálculo trabalhista"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Implementar explicações detalhadas das fórmulas"
+        ]
+      },
+      {
+        "session_id": "1a242ae3-5baf-43a7-99a1-b9a338dad8d0",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Cálculos Jurídicos Avançados",
+        "timestamp": "2025-09-12T17:50:20.656399",
+        "duration_minutes": 35.21384753556642,
+        "tasks_completed": 6,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.5,
+        "accuracy_perception": 8.3,
+        "speed_perception": 7.6,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Gostaria de mais tipos de cálculo trabalhista",
+          "Os cálculos são precisos e confiáveis"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Refinar algoritmos para maior precisão",
+          "Implementar explicações detalhadas das fórmulas"
+        ]
+      },
+      {
+        "session_id": "1983472f-6b7e-4250-bc52-5734a05dbfde",
+        "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+        "functionality": "Cálculos Jurídicos Avançados",
+        "timestamp": "2025-09-12T17:50:20.656413",
+        "duration_minutes": 31.605293218896335,
+        "tasks_completed": 5,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.0,
+        "accuracy_perception": 9.5,
+        "speed_perception": 8.2,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "6683a107-e7d7-4d95-900f-5ca9ed98adc0",
+          "name": "Dra. Ana Costa",
+          "role": "Coordenadora Jurídica",
+          "experience_years": 12,
+          "specialization": "Direito Empresarial",
+          "firm_size": "Grande",
+          "tech_comfort": "Médio"
+        },
+        "qualitative_feedback": [
+          "Os cálculos são precisos e confiáveis",
+          "Gostaria de mais tipos de cálculo trabalhista"
+        ],
+        "improvement_suggestions": [
+          "Adicionar mais tipos de cálculo"
+        ]
+      },
+      {
+        "session_id": "92b8a866-3784-4307-80af-5720725ca992",
+        "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+        "functionality": "Cálculos Jurídicos Avançados",
+        "timestamp": "2025-09-12T17:50:20.656427",
+        "duration_minutes": 41.13859191787762,
+        "tasks_completed": 3,
+        "satisfaction_score": 10,
+        "ease_of_use": 8.7,
+        "accuracy_perception": 9.6,
+        "speed_perception": 7.8,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "8bddd545-b70d-4e0e-a992-e5483650d0c0",
+          "name": "Dr. Carlos Santos",
+          "role": "Advogado Sênior",
+          "experience_years": 15,
+          "specialization": "Direito Civil",
+          "firm_size": "Grande",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Interface muito mais amigável que planilhas complexas",
+          "Gostaria de mais tipos de cálculo trabalhista"
+        ],
+        "improvement_suggestions": [
+          "Otimizar performance e velocidade de resposta",
+          "Adicionar mais tipos de cálculo"
+        ]
+      },
+      {
+        "session_id": "33e490e6-c529-4b4c-adfc-8d1e8a7a6822",
+        "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+        "functionality": "Cálculos Jurídicos Avançados",
+        "timestamp": "2025-09-12T17:50:20.656442",
+        "duration_minutes": 30.90893817146622,
+        "tasks_completed": 4,
+        "satisfaction_score": 10,
+        "ease_of_use": 9.2,
+        "accuracy_perception": 8.8,
+        "speed_perception": 8.1,
+        "would_recommend": true,
+        "issues_encountered": false,
+        "user_profile": {
+          "user_id": "27f64b20-0b32-493a-a87e-5f88aa1eae2a",
+          "name": "Dr. Roberto Oliveira",
+          "role": "Advogado Júnior",
+          "experience_years": 2,
+          "specialization": "Direito Penal",
+          "firm_size": "Médio",
+          "tech_comfort": "Alto"
+        },
+        "qualitative_feedback": [
+          "Gostaria de mais tipos de cálculo trabalhista",
+          "Os cálculos são precisos e confiáveis"
+        ],
+        "improvement_suggestions": [
+          "Refinar algoritmos para maior precisão",
+          "Adicionar mais tipos de cálculo"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "tenant_id": "demo-escritorio",
+    "name": "Escritório Demo",
+    "api_key": "dev-demo-key-change-me",
+    "rate_limit_rpm": 60
+  }
+]

@@ -1,0 +1,53 @@
+version: "1.0"
+# Unifica enhanced_document_analyzer + enhanced_document_generator
+tipos:
+  - id: peticao_inicial
+    nome: Petição Inicial
+    fase: postulatoria
+    validacao: cpc_art_319
+  - id: contestacao
+    nome: Contestação
+    fase: postulatoria
+    prazo_padrao_dias_uteis: 15
+  - id: replica
+    nome: Réplica
+    fase: postulatoria
+  - id: recurso_apelacao
+    nome: Recurso de Apelação
+    fase: recursal
+  - id: embargos_declaracao
+    nome: Embargos de Declaração
+    fase: recursal
+  - id: agravo_instrumento
+    nome: Agravo de Instrumento
+    fase: recursal
+  - id: mandado_seguranca
+    nome: Mandado de Segurança
+    fase: especial
+  - id: habeas_corpus
+    nome: Habeas Corpus
+    fase: especial
+  - id: sentenca
+    nome: Sentença
+    fase: decisoria
+    origem: tribunal
+  - id: acordao
+    nome: Acórdão
+    fase: decisoria
+    origem: tribunal
+  - id: contrato
+    nome: Contrato
+    fase: consultiva
+    validacao: elementos_essenciais_contrato
+  - id: procuracao
+    nome: Procuração
+    fase: consultiva
+  - id: parecer
+    nome: Parecer Jurídico
+    fase: consultiva
+  - id: notificacao_extrajudicial
+    nome: Notificação Extrajudicial
+    fase: consultiva
+  - id: laudo_pericial
+    nome: Laudo Pericial
+    fase: probatoria
