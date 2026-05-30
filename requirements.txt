@@ -17,6 +17,4 @@ plotly>=5.18.0
 sentry-sdk[fastapi]>=2.0.0
 redis>=5.0.0
 fakeredis>=2.26.0
-
-# Módulos legados (análise/cálculos) — sem OpenAI obrigatório para fluxos determinísticos
-# openai>=1.0.0  # descomente quando integrar Vertex/Gemini via camada de IA
+openai>=1.0.0
