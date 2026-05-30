@@ -7,6 +7,7 @@ from legal_core import HUB_ROOT
 from legal_core.ontology import document_type_ids, legal_area_ids
 from legal_core.prompts import list_prompts
 from services.api.schemas import HealthResponse
+from services.api.version import APP_VERSION
 
 router = APIRouter()
 
@@ -29,7 +30,7 @@ def health() -> HealthResponse:
     redis = redis_status()
     return HealthResponse(
         status="ok",
-        version="0.1.0",
+        version=APP_VERSION,
         hub=str(HUB_ROOT.name),
         gemini_available=is_gemini_available(),
         ai_backend=ai.get("backend"),

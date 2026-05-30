@@ -9,6 +9,8 @@ from typing import Any
 
 from fastapi import FastAPI
 
+from services.api.version import SENTRY_RELEASE
+
 logger = logging.getLogger(__name__)
 
 _STATUS: dict[str, Any] = {
@@ -77,7 +79,7 @@ def setup_sentry(app: FastAPI) -> bool:
         dsn=dsn,
         integrations=[StarletteIntegration(), FastApiIntegration()],
         environment=os.getenv("SENTRY_ENVIRONMENT", "development"),
-        release=os.getenv("SENTRY_RELEASE", "legal-ai-platform@0.1.0"),
+        release=os.getenv("SENTRY_RELEASE", SENTRY_RELEASE),
         traces_sample_rate=max(0.0, min(1.0, traces_rate)),
         send_default_pii=False,
     )

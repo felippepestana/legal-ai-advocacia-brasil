@@ -1,5 +1,5 @@
 # Fonte canônica — espelhar em packages/legal_core/enums.py
-version: "1.0"
+version: "2.0"
 areas:
   - id: civil
     nome: Civil

@@ -9,6 +9,7 @@ from services.api.config import API_PREFIX, CORS_ORIGINS
 from services.api.middleware import RateLimitMiddleware, TenantAuthMiddleware
 from services.api.observability import setup_observability
 from services.api.routes import api_router
+from services.api.version import APP_VERSION
 
 
 @asynccontextmanager
@@ -20,7 +21,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="Legal AI Platform — Advocacia Brasil",
     description="API unificada: análise documental, validação CPC, prazos e cálculos.",
-    version="0.1.0",
+    version=APP_VERSION,
     lifespan=lifespan,
 )
 

@@ -60,16 +60,16 @@ export default function App() {
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-            Plataforma Jurídica — Advocacia Brasil
+            Plataforma Jurídica V2 — Advocacia Brasil
           </h1>
           <p className="mt-2 text-slate-600">
-            Plataforma jurídica completa — 10 módulos integrados à API
+            Jurídico + gestão e administração — 10 módulos integrados à API
           </p>
           <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-500">
             {health && (
               <>
                 <span className="rounded-full bg-emerald-100 px-2 py-1 text-emerald-800">
-                  API {health.status}
+                  API {health.status} · v{health.version}
                 </span>
                 {health.auth_required && (
                   <span className="rounded-full bg-indigo-100 px-2 py-1 text-indigo-800">
