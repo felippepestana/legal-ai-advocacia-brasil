@@ -21,5 +21,9 @@ def test_web_dockerfile_exists():
     assert (ROOT / "apps" / "web" / "nginx.conf").is_file()
 
 
-def test_deploy_guide_exists():
+def test_web_cloudrun_dockerfile_exists():
+    assert (ROOT / "apps" / "web" / "Dockerfile.cloudrun").is_file()
+    assert (ROOT / "cloudbuild.web.yaml").is_file()
+    assert (ROOT / "scripts" / "deploy_gcp.ps1").is_file()
+    assert (ROOT / "ops" / "GCP-SETUP.md").is_file()
     assert (ROOT / "ops" / "DEPLOY.md").is_file()

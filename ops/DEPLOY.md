@@ -60,6 +60,14 @@ gcloud run deploy advocacia-api `
 
 Deploy automatizado: GitHub Actions → `.github/workflows/deploy-cloud-run.yml` (manual dispatch).
 
+**Guia completo GCP (primeira vez):** `ops/GCP-SETUP.md`
+
+**Script PowerShell:**
+
+```powershell
+.\scripts\deploy_gcp.ps1 -ProjectId SEU_PROJETO -Region southamerica-east1
+```
+
 ## Frontend estático
 
 Build:

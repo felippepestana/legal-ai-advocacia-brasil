@@ -8,15 +8,98 @@ on:
         required: true
       gcp_region:
         description: Região Cloud Run
-        default: us-central1
-      service_name:
-        description: Nome do serviço
+        default: southamerica-east1
+      api_service_name:
+        description: Nome do serviço API
         default: advocacia-api
+      web_service_name:
+        description: Nome do serviço Web
+        default: advocacia-web
+      deploy_web:
+        description: Deploy frontend após API
+        type: boolean
+        default: true
+      cors_origins:
+        description: CORS_ORIGINS (URL do frontend; vazio = preencher depois)
+        required: false
+        default: ""
 
 jobs:
-  deploy:
+  deploy-api:
+    name: Deploy API
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: read
+      id-token: write
+    outputs:
+      api_url: ${{ steps.api-url.outputs.url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+
+      - name: Build and push API image
+        run: |
+          gcloud builds submit \
+            --project "${{ inputs.gcp_project }}" \
+            --tag "gcr.io/${{ inputs.gcp_project }}/${{ inputs.api_service_name }}:${{ github.sha }}"
+
+      - name: Deploy API to Cloud Run
+        env:
+          CORS: ${{ inputs.cors_origins }}
+          TENANTS_SECRET: ${{ secrets.GCP_TENANTS_SECRET }}
+          SENTRY_SECRET: ${{ secrets.SENTRY_DSN_SECRET }}
+        run: |
+          ENV_VARS="AI_BACKEND=vertex,GOOGLE_CLOUD_PROJECT=${{ inputs.gcp_project }},VERTEX_LOCATION=${{ inputs.gcp_region }}"
+          ENV_VARS="${ENV_VARS},LOG_FORMAT=json,RATE_LIMIT_ENABLED=true,SEARCH_CACHE_ENABLED=true"
+          ENV_VARS="${ENV_VARS},AI_AUDIT_ENABLED=true,AUTH_REQUIRED=true"
+          if [ -n "$CORS" ]; then
+            ENV_VARS="${ENV_VARS},CORS_ORIGINS=${CORS}"
+          fi
+
+          EXTRA_ARGS=""
+          if [ -n "$TENANTS_SECRET" ]; then
+            EXTRA_ARGS="$EXTRA_ARGS --set-secrets TENANTS_JSON=${TENANTS_SECRET}:latest"
+          fi
+          if [ -n "$SENTRY_SECRET" ]; then
+            EXTRA_ARGS="$EXTRA_ARGS --set-secrets SENTRY_DSN=${SENTRY_SECRET}:latest"
+          fi
+
+          gcloud run deploy "${{ inputs.api_service_name }}" \
+            --project "${{ inputs.gcp_project }}" \
+            --image "gcr.io/${{ inputs.gcp_project }}/${{ inputs.api_service_name }}:${{ github.sha }}" \
+            --region "${{ inputs.gcp_region }}" \
+            --platform managed \
+            --allow-unauthenticated \
+            --memory 1Gi \
+            --cpu 1 \
+            --min-instances 0 \
+            --max-instances 10 \
+            --set-env-vars "$ENV_VARS" \
+            $EXTRA_ARGS
+
+      - name: Get API URL
+        id: api-url
+        run: |
+          URL=$(gcloud run services describe "${{ inputs.api_service_name }}" \
+            --project "${{ inputs.gcp_project }}" \
+            --region "${{ inputs.gcp_region }}" \
+            --format 'value(status.url)')
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "API URL: $URL"
+
+  deploy-web:
+    name: Deploy Web
+    needs: deploy-api
+    if: inputs.deploy_web
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions:
       contents: read
       id-token: write
@@ -30,16 +113,42 @@ jobs:
 
       - uses: google-github-actions/setup-gcloud@v2
 
-      - name: Build and push
+      - name: Build and push Web image
         run: |
           gcloud builds submit \
-            --tag "gcr.io/${{ inputs.gcp_project }}/${{ inputs.service_name }}:${{ github.sha }}"
+            --project "${{ inputs.gcp_project }}" \
+            --config cloudbuild.web.yaml \
+            --substitutions "_VITE_API_URL=${{ needs.deploy-api.outputs.api_url }},_IMAGE=gcr.io/${{ inputs.gcp_project }}/${{ inputs.web_service_name }}:${{ github.sha }}"
 
-      - name: Deploy Cloud Run
+      - name: Deploy Web to Cloud Run
         run: |
-          gcloud run deploy "${{ inputs.service_name }}" \
-            --image "gcr.io/${{ inputs.gcp_project }}/${{ inputs.service_name }}:${{ github.sha }}" \
+          gcloud run deploy "${{ inputs.web_service_name }}" \
+            --project "${{ inputs.gcp_project }}" \
+            --image "gcr.io/${{ inputs.gcp_project }}/${{ inputs.web_service_name }}:${{ github.sha }}" \
             --region "${{ inputs.gcp_region }}" \
             --platform managed \
             --allow-unauthenticated \
-            --set-env-vars "AI_BACKEND=vertex,GOOGLE_CLOUD_PROJECT=${{ inputs.gcp_project }},VERTEX_LOCATION=${{ inputs.gcp_region }},RATE_LIMIT_ENABLED=true"
+            --memory 512Mi \
+            --port 8080
+
+      - name: Web URL
+        run: |
+          gcloud run services describe "${{ inputs.web_service_name }}" \
+            --project "${{ inputs.gcp_project }}" \
+            --region "${{ inputs.gcp_region }}" \
+            --format 'value(status.url)'
+
+  post-deploy:
+    name: Pós-deploy
+    needs: [deploy-api, deploy-web]
+    if: always() && needs.deploy-api.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Instruções
+        run: |
+          echo "## Deploy API concluído"
+          echo "URL: ${{ needs.deploy-api.outputs.api_url }}"
+          echo "Health: ${{ needs.deploy-api.outputs.api_url }}/v1/health"
+          echo ""
+          echo "Se CORS_ORIGINS não foi informado, atualize no Cloud Run com a URL do frontend."
+          echo "Configure TENANTS_JSON via Secret Manager (secret: GCP_TENANTS_SECRET no GitHub)."

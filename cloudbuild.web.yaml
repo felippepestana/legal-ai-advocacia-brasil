@@ -1,0 +1,16 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -f
+      - apps/web/Dockerfile.cloudrun
+      - --build-arg
+      - VITE_API_URL=${_VITE_API_URL}
+      - -t
+      - ${_IMAGE}
+      - apps/web
+images:
+  - ${_IMAGE}
+substitutions:
+  _VITE_API_URL: ""
+  _IMAGE: gcr.io/PROJECT/advocacia-web:latest
