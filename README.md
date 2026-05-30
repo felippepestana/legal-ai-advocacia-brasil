@@ -18,12 +18,22 @@ Plataforma jurídica unificada (ordenamento brasileiro): análise documental, va
 ## Requisitos
 
 - Python 3.11+
+- Node.js 20+ (frontend)
 - `pip install -r requirements.txt`
+
+> **Ambiente local recomendado:** `D:\DEV\LEGA-AI` (fora do Google Drive). Veja `LOCAL-DEV.md`.
+
+## Setup rápido
+
+```powershell
+cd D:\DEV\LEGA-AI
+.\scripts\setup_dev.ps1
+```
 
 ## Executar API
 
 ```powershell
-cd "k:\Meu Drive\SOLUÇÃO JURIDICA IA legal performance MANUS PARA GOOGLE"
+cd D:\DEV\LEGA-AI
 python -m uvicorn services.api.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
@@ -40,6 +50,16 @@ npm run dev
 Interface: http://localhost:5173 (proxy `/v1` → API na porta 8000).
 
 Atalho (API + web): `.\scripts\run_dev.ps1`
+
+## Stack Docker (API + Web + Redis)
+
+```powershell
+docker compose up --build
+```
+
+Web: http://localhost:8080 — API: http://localhost:8000/docs
+
+Guia completo: `ops/DEPLOY.md`
 
 ## Endpoints principais
 

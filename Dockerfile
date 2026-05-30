@@ -12,7 +12,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY packages/ packages/
 COPY services/ services/
 COPY advocacia-brasil-hub/ advocacia-brasil-hub/
-RUN mkdir -p data/analytics/charts
+COPY config/ config/
+RUN mkdir -p data/analytics/charts data/audit
 
 EXPOSE 8080
 

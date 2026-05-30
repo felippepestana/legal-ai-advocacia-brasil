@@ -86,6 +86,11 @@ export default function App() {
                     Sentry
                   </span>
                 )}
+                {health.redis_connected && (
+                  <span className="rounded-full bg-orange-100 px-2 py-1 text-orange-800">
+                    Redis
+                  </span>
+                )}
                 {health.gemini_available ? (
                   <span className="rounded-full bg-amber-100 px-2 py-1 text-amber-800">
                     IA {health.ai_backend === 'vertex' ? 'Vertex' : 'Gemini'} · {health.ai_model}

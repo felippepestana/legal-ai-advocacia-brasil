@@ -1,0 +1,13 @@
+**/__pycache__
+**/.pytest_cache
+**/.venv
+**/venv
+**/node_modules
+apps/web/dist
+data/
+.git
+.env
+desktop.ini
+*.zip
+tests/
+.pytest_cache

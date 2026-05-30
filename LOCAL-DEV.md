@@ -31,6 +31,12 @@ Quando alterar arquivos no Drive, rode:
 .\scripts\sync_from_drive.ps1
 ```
 
+Para enviar alterações locais de volta ao Drive:
+
+```powershell
+.\scripts\sync_to_drive.ps1
+```
+
 ## Git
 
 Repositório Git ativo nesta pasta (`main`). Commits e push devem ser feitos daqui.
