@@ -1,0 +1,109 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: sistemalabadvia
+  REGION: southamerica-east1
+  REGISTRY_REGION: southamerica-east1
+  GCP_PROJECT_NUMBER: "634789300838"
+
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: auth
+        name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          workload_identity_provider: projects/${{ env.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/github-actions/providers/github
+          service_account: github-actions-sa@${{ env.PROJECT_ID }}.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 3600s
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+
+      - name: Configure Docker
+        run: gcloud auth configure-docker ${{ env.REGISTRY_REGION }}-docker.pkg.dev
+
+      - name: Build and push API
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ${{ env.REGISTRY_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/legal-ai-api/legal-ai-api:latest
+            ${{ env.REGISTRY_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/legal-ai-api/legal-ai-api:${{ github.sha }}
+
+      - name: Build and push Web
+        uses: docker/build-push-action@v4
+        with:
+          context: ./apps/web
+          file: ./apps/web/Dockerfile.cloudrun
+          push: true
+          tags: |
+            ${{ env.REGISTRY_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/legal-ai-web/legal-ai-web:latest
+            ${{ env.REGISTRY_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/legal-ai-web/legal-ai-web:${{ github.sha }}
+
+      - name: Deploy API to Cloud Run (Production)
+        run: |
+          gcloud run deploy legal-ai-api \
+            --image=${{ env.REGISTRY_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/legal-ai-api/legal-ai-api:latest \
+            --region=${{ env.REGION }} \
+            --platform=managed \
+            --port=8000 \
+            --memory=4Gi \
+            --cpu=4 \
+            --allow-unauthenticated \
+            --set-env-vars=ENVIRONMENT=production \
+            --project=${{ env.PROJECT_ID }}
+
+      - name: Deploy Web to Cloud Run (Production)
+        run: |
+          gcloud run deploy legal-ai-web \
+            --image=${{ env.REGISTRY_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/legal-ai-web/legal-ai-web:latest \
+            --region=${{ env.REGION }} \
+            --platform=managed \
+            --port=8080 \
+            --memory=2Gi \
+            --cpu=2 \
+            --allow-unauthenticated \
+            --project=${{ env.PROJECT_ID }}
+
+      - name: Health check Production API
+        run: |
+          API_URL=$(gcloud run services describe legal-ai-api \
+            --region=${{ env.REGION }} \
+            --format='value(status.url)' \
+            --project=${{ env.PROJECT_ID }})
+          echo "Testing: ${API_URL}/v1/health"
+          for i in {1..30}; do
+            if curl -f ${API_URL}/v1/health; then
+              echo "✅ Production API health check passed"
+              exit 0
+            fi
+            echo "Attempt $i/30..."
+            sleep 10
+          done
+          echo "❌ Production API health check failed"
+          exit 1
+
+      - name: Notify production deployment
+        if: success()
+        run: |
+          API_URL=$(gcloud run services describe legal-ai-api --region=${{ env.REGION }} --format='value(status.url)' --project=${{ env.PROJECT_ID }})
+          WEB_URL=$(gcloud run services describe legal-ai-web --region=${{ env.REGION }} --format='value(status.url)' --project=${{ env.PROJECT_ID }})
+          echo "✅ Production deployment successful!"
+          echo "API: ${API_URL}"
+          echo "Web: ${WEB_URL}"

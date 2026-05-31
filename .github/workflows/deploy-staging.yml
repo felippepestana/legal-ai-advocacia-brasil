@@ -1,0 +1,129 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: sistemalabadvia
+  REGION: southamerica-east1
+  REGISTRY_REGION: southamerica-east1
+  API_IMAGE_NAME: legal-ai-api
+  WEB_IMAGE_NAME: legal-ai-web
+  GCP_PROJECT_NUMBER: "634789300838"
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: auth
+        name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          workload_identity_provider: projects/${{ env.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/github-actions/providers/github
+          service_account: github-actions-sa@${{ env.PROJECT_ID }}.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 3600s
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+
+      - name: Configure Docker
+        run: gcloud auth configure-docker ${{ env.REGISTRY_REGION }}-docker.pkg.dev
+
+      - name: Build and push API image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ${{ env.REGISTRY_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.API_IMAGE_NAME }}/${{ env.API_IMAGE_NAME }}:staging-latest
+            ${{ env.REGISTRY_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.API_IMAGE_NAME }}/${{ env.API_IMAGE_NAME }}:staging-${{ github.sha }}
+
+      - name: Build and push Web image
+        uses: docker/build-push-action@v4
+        with:
+          context: ./apps/web
+          file: ./apps/web/Dockerfile.cloudrun
+          push: true
+          tags: |
+            ${{ env.REGISTRY_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.WEB_IMAGE_NAME }}/${{ env.WEB_IMAGE_NAME }}:staging-latest
+            ${{ env.REGISTRY_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.WEB_IMAGE_NAME }}/${{ env.WEB_IMAGE_NAME }}:staging-${{ github.sha }}
+
+      - name: Deploy API to Cloud Run
+        run: |
+          gcloud run deploy legal-ai-api-staging \
+            --image=${{ env.REGISTRY_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.API_IMAGE_NAME }}/${{ env.API_IMAGE_NAME }}:staging-latest \
+            --region=${{ env.REGION }} \
+            --platform=managed \
+            --port=8000 \
+            --memory=2Gi \
+            --cpu=2 \
+            --allow-unauthenticated \
+            --set-env-vars=ENVIRONMENT=staging \
+            --project=${{ env.PROJECT_ID }}
+
+      - name: Deploy Web to Cloud Run
+        run: |
+          gcloud run deploy legal-ai-web-staging \
+            --image=${{ env.REGISTRY_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.WEB_IMAGE_NAME }}/${{ env.WEB_IMAGE_NAME }}:staging-latest \
+            --region=${{ env.REGION }} \
+            --platform=managed \
+            --port=8080 \
+            --memory=1Gi \
+            --cpu=1 \
+            --allow-unauthenticated \
+            --project=${{ env.PROJECT_ID }}
+
+      - name: Health check API
+        run: |
+          API_URL=$(gcloud run services describe legal-ai-api-staging \
+            --region=${{ env.REGION }} \
+            --format='value(status.url)' \
+            --project=${{ env.PROJECT_ID }})
+          echo "Testing: ${API_URL}/v1/health"
+          for i in {1..30}; do
+            if curl -f ${API_URL}/v1/health; then
+              echo "✅ API health check passed"
+              exit 0
+            fi
+            echo "Attempt $i/30..."
+            sleep 10
+          done
+          echo "❌ API health check failed after 30 attempts"
+          exit 1
+
+      - name: Health check Web
+        run: |
+          WEB_URL=$(gcloud run services describe legal-ai-web-staging \
+            --region=${{ env.REGION }} \
+            --format='value(status.url)' \
+            --project=${{ env.PROJECT_ID }})
+          echo "Testing: ${WEB_URL}"
+          for i in {1..30}; do
+            if curl -f ${WEB_URL} > /dev/null; then
+              echo "✅ Web health check passed"
+              exit 0
+            fi
+            echo "Attempt $i/30..."
+            sleep 10
+          done
+          echo "❌ Web health check failed after 30 attempts"
+          exit 1
+
+      - name: Notify deployment
+        if: success()
+        run: |
+          API_URL=$(gcloud run services describe legal-ai-api-staging --region=${{ env.REGION }} --format='value(status.url)' --project=${{ env.PROJECT_ID }})
+          WEB_URL=$(gcloud run services describe legal-ai-web-staging --region=${{ env.REGION }} --format='value(status.url)' --project=${{ env.PROJECT_ID }})
+          echo "✅ Staging deployment successful!"
+          echo "API: ${API_URL}"
+          echo "Web: ${WEB_URL}"
