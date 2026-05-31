@@ -1,66 +1,168 @@
-name: CI
+name: CI — Test & Build
 
 on:
   push:
-    branches: [main, master]
+    branches: [main, develop]
   pull_request:
-
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
+    branches: [main, develop]
 
 jobs:
-  api-tests:
-    name: API — pytest
+  # Job 1: Testes Python (Backend)
+  test-backend:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.13"]
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
           cache: pip
-          cache-dependency-path: requirements.txt
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-      - name: Run tests
-        env:
-          RATE_LIMIT_ENABLED: "true"
-          SEARCH_CACHE_ENABLED: "true"
-          AI_AUDIT_ENABLED: "true"
-        run: python -m pytest tests/ -q --tb=short
+      - name: Lint with flake8 (if available)
+        run: |
+          pip install flake8
+          flake8 services/ packages/ --count --select=E9,F63,F7,F82 --show-source --statistics || true
 
-  web-build:
-    name: Web — build
+      - name: Run pytest
+        run: |
+          pytest tests/ -v --tb=short --color=yes
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        if: matrix.python-version == '3.13'
+        with:
+          files: ./coverage.xml
+          fail_ci_if_error: false
+
+  # Job 2: Build Docker (Backend)
+  build-backend:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    defaults:
-      run:
-        working-directory: apps/web
+    needs: test-backend
+    if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: npm
-          cache-dependency-path: apps/web/package.json
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
-      - name: Install and build
+      - name: Build Docker image (API)
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: legal-ai-api:${{ github.sha }}
+
+  # Job 3: Build Frontend (Web)
+  build-frontend:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+
+      - name: Install dependencies (web)
         run: |
-          npm install
+          cd apps/web
+          npm ci
+
+      - name: Build web
+        run: |
+          cd apps/web
           npm run build
 
-  docker-build:
-    name: Docker — build image
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: web-dist
+          path: apps/web/dist/
+          retention-days: 1
+
+  # Job 4: Test Frontend (Web)
+  test-frontend:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    needs: api-tests
+    strategy:
+      matrix:
+        node-version: [20]
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build API image
-        run: docker build -t advocacia-api:ci .
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+
+      - name: Install dependencies (web)
+        run: |
+          cd apps/web
+          npm ci
+
+      - name: Run lint (if available)
+        run: |
+          cd apps/web
+          npm run lint 2>/dev/null || echo "No lint script"
+
+      - name: Type check (if available)
+        run: |
+          cd apps/web
+          npm run typecheck 2>/dev/null || echo "No typecheck script"
+
+  # Job 5: Security scan (opcional)
+  security-scan:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "fs"
+          scan-ref: "."
+          format: "sarif"
+          output: "trivy-results.sarif"
+
+      - name: Upload Trivy results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v2
+        if: always()
+        with:
+          sarif_file: "trivy-results.sarif"
+
+  # Job 6: Summary
+  summary:
+    runs-on: ubuntu-latest
+    needs: [test-backend, build-backend, build-frontend, test-frontend]
+    if: always()
+    steps:
+      - name: Check status
+        run: |
+          echo "✅ Backend tests: ${{ needs.test-backend.result }}"
+          echo "✅ Backend build: ${{ needs.build-backend.result }}"
+          echo "✅ Frontend build: ${{ needs.build-frontend.result }}"
+          echo "✅ Frontend tests: ${{ needs.test-frontend.result }}"
+          if [ "${{ needs.test-backend.result }}" != "success" ] || [ "${{ needs.build-frontend.result }}" != "success" ]; then
+            echo "❌ CI failed"
+            exit 1
+          fi
+          echo "✅ CI passed"

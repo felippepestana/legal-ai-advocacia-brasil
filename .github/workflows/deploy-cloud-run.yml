@@ -1,45 +1,155 @@
-name: Deploy Cloud Run
+name: Deploy — Cloud Run
 
 on:
-  workflow_dispatch:
-    inputs:
-      gcp_project:
-        description: ID do projeto GCP
-        required: true
-      gcp_region:
-        description: Região Cloud Run
-        default: us-central1
-      service_name:
-        description: Nome do serviço
-        default: advocacia-api
+  workflow_dispatch:  # Manual trigger
+  push:
+    branches: [main]
+    paths:
+      - 'services/**'
+      - 'packages/**'
+      - 'apps/web/**'
+      - 'requirements.txt'
+      - 'Dockerfile'
+      - '.github/workflows/deploy-cloud-run.yml'
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  REGION: us-central1
+  SERVICE_NAME_API: legal-ai-api
+  SERVICE_NAME_WEB: legal-ai-web
 
 jobs:
-  deploy:
+  deploy-api:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
     permissions:
       contents: read
       id-token: write
     steps:
       - uses: actions/checkout@v4
 
-      - uses: google-github-actions/auth@v2
+      - name: Setup Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: ${{ env.PROJECT_ID }}
+
+      - name: Authenticate with Workload Identity Federation
+        uses: google-github-actions/auth@v1
         with:
           workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
 
-      - uses: google-github-actions/setup-gcloud@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
-      - name: Build and push
+      - name: Configure Docker to use gcloud
         run: |
-          gcloud builds submit \
-            --tag "gcr.io/${{ inputs.gcp_project }}/${{ inputs.service_name }}:${{ github.sha }}"
+          gcloud auth configure-docker gcr.io
 
-      - name: Deploy Cloud Run
+      - name: Build and push Docker image (API)
         run: |
-          gcloud run deploy "${{ inputs.service_name }}" \
-            --image "gcr.io/${{ inputs.gcp_project }}/${{ inputs.service_name }}:${{ github.sha }}" \
-            --region "${{ inputs.gcp_region }}" \
+          docker build -t gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME_API }}:${{ github.sha }} \
+            -t gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME_API }}:latest \
+            -f Dockerfile .
+          docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME_API }}:${{ github.sha }}
+          docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME_API }}:latest
+
+      - name: Deploy API to Cloud Run
+        run: |
+          gcloud run deploy ${{ env.SERVICE_NAME_API }} \
+            --image gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME_API }}:${{ github.sha }} \
+            --region ${{ env.REGION }} \
             --platform managed \
             --allow-unauthenticated \
-            --set-env-vars "AI_BACKEND=vertex,GOOGLE_CLOUD_PROJECT=${{ inputs.gcp_project }},VERTEX_LOCATION=${{ inputs.gcp_region }},RATE_LIMIT_ENABLED=true"
+            --set-env-vars GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }},\
+REDIS_URL=${{ secrets.REDIS_URL }},\
+SENTRY_DSN=${{ secrets.SENTRY_DSN }},\
+SLACK_WEBHOOK_URL=${{ secrets.SLACK_WEBHOOK_URL }},\
+SENTRY_ENVIRONMENT=production,\
+LOG_FORMAT=json,\
+LOG_LEVEL=info \
+            --memory 2Gi \
+            --timeout 60 \
+            --max-instances 100 \
+            --min-instances 1
+
+      - name: Health check
+        run: |
+          sleep 10
+          curl -f https://${{ env.SERVICE_NAME_API }}-*.run.app/v1/health || exit 1
+
+  deploy-web:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: ${{ env.PROJECT_ID }}
+
+      - name: Authenticate with Workload Identity Federation
+        uses: google-github-actions/auth@v1
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Configure Docker to use gcloud
+        run: |
+          gcloud auth configure-docker gcr.io
+
+      - name: Build and push Docker image (Web)
+        run: |
+          docker build -t gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME_WEB }}:${{ github.sha }} \
+            -t gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME_WEB }}:latest \
+            -f apps/web/Dockerfile.cloudrun \
+            ./apps/web
+          docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME_WEB }}:${{ github.sha }}
+          docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME_WEB }}:latest
+
+      - name: Deploy Web to Cloud Run
+        run: |
+          gcloud run deploy ${{ env.SERVICE_NAME_WEB }} \
+            --image gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE_NAME_WEB }}:${{ github.sha }} \
+            --region ${{ env.REGION }} \
+            --platform managed \
+            --allow-unauthenticated \
+            --set-env-vars VITE_API_URL=https://${{ env.SERVICE_NAME_API }}-*.run.app,\
+VITE_API_PREFIX=/v1 \
+            --memory 512Mi \
+            --timeout 30 \
+            --max-instances 50 \
+            --min-instances 1
+
+      - name: Health check
+        run: |
+          sleep 10
+          curl -f https://${{ env.SERVICE_NAME_WEB }}-*.run.app/ || exit 1
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: [deploy-api, deploy-web]
+    if: always()
+    steps:
+      - name: Slack notification (if webhook configured)
+        if: success()
+        run: |
+          curl -X POST ${{ secrets.SLACK_WEBHOOK_URL }} \
+            -H 'Content-Type: application/json' \
+            -d '{
+              "text": "✅ Legal AI Platform deployed to Cloud Run",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*✅ Deployment Successful*\n*API:* https://${{ env.SERVICE_NAME_API }}-*.run.app\n*Web:* https://${{ env.SERVICE_NAME_WEB }}-*.run.app"
+                  }
+                }
+              ]
+            }' || true
