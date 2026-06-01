@@ -1,0 +1,40 @@
+# Dockerfile — Legal AI Platform Frontend (Cloud Run)
+# Build: docker build -f apps/web/Dockerfile.cloudrun -t legal-ai-web-prod:latest apps/web
+# Run: docker run -p 8080:8080 legal-ai-web-prod:latest
+
+FROM node:24-slim AS builder
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy source
+COPY . .
+
+# Build
+RUN npm run build
+
+# Production image
+FROM node:24-alpine
+
+WORKDIR /app
+
+# Install serve
+RUN npm install -g serve
+
+# Copy built app from builder
+COPY --from=builder /app/dist ./dist
+
+# Expose port (Cloud Run uses 8080)
+EXPOSE 8080
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD wget --quiet --tries=1 --spider http://localhost:8080/ || exit 1
+
+# Run
+CMD ["serve", "-s", "dist", "-l", "8080"]
