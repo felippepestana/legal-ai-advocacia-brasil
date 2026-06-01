@@ -2,7 +2,7 @@
 
 Plataforma jurídica unificada (ordenamento brasileiro): análise documental, validação CPC, prazos, cálculos, pesquisa, peças, workflows, assistente IA, analytics e auditoria LGPD.
 
-**Versão atual:** 2.0.0 — escopo exclusivamente **jurídico + gestão/administração** (sem verticais odontológicas ou de saúde). Ver `CHANGELOG.md` e `advocacia-brasil-hub/docs/escopo-v2-juridico.md`.
+**Versão atual:** 2.0.2 — escopo exclusivamente **jurídico + gestão/administração** (sem verticais odontológicas ou de saúde). Ver `CHANGELOG.md` e `advocacia-brasil-hub/docs/escopo-v2-juridico.md`.
 
 ## Estrutura
 
