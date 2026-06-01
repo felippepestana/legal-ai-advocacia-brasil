@@ -17,6 +17,11 @@ Plataforma jurídica unificada (ordenamento brasileiro): análise documental, va
 | `legacy/` | Referência ao export original na raiz |
 | `*.py` (raiz) | Cópias legadas do export Manus |
 
+## Configuração (APIs, GCP, tenants)
+
+Guia passo a passo: **`ops/CONFIGURACAO.md`**  
+Verificação rápida: `.\scripts\check_config.ps1` (local) ou `.\scripts\check_config.ps1 -Production`
+
 ## Requisitos
 
 - Python 3.11+
