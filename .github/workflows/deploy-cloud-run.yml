@@ -46,9 +46,17 @@ jobs:
 
       - name: Build and push API image
         run: |
-          gcloud builds submit \
+          BUILD_ID=$(gcloud builds submit \
             --project "${{ inputs.gcp_project }}" \
-            --tag "gcr.io/${{ inputs.gcp_project }}/${{ inputs.api_service_name }}:${{ github.sha }}"
+            --async \
+            --format='value(id)' \
+            --tag "gcr.io/${{ inputs.gcp_project }}/${{ inputs.api_service_name }}:${{ github.sha }}")
+          gcloud builds wait "$BUILD_ID" --project "${{ inputs.gcp_project }}"
+          STATUS=$(gcloud builds describe "$BUILD_ID" --project "${{ inputs.gcp_project }}" --format='value(status)')
+          if [ "$STATUS" != "SUCCESS" ]; then
+            echo "Cloud Build failed with status: $STATUS"
+            exit 1
+          fi
 
       - name: Deploy API to Cloud Run
         env:
@@ -115,10 +123,18 @@ jobs:
 
       - name: Build and push Web image
         run: |
-          gcloud builds submit \
+          BUILD_ID=$(gcloud builds submit \
             --project "${{ inputs.gcp_project }}" \
+            --async \
+            --format='value(id)' \
             --config cloudbuild.web.yaml \
-            --substitutions "_VITE_API_URL=${{ needs.deploy-api.outputs.api_url }},_IMAGE=gcr.io/${{ inputs.gcp_project }}/${{ inputs.web_service_name }}:${{ github.sha }}"
+            --substitutions "_VITE_API_URL=${{ needs.deploy-api.outputs.api_url }},_IMAGE=gcr.io/${{ inputs.gcp_project }}/${{ inputs.web_service_name }}:${{ github.sha }}")
+          gcloud builds wait "$BUILD_ID" --project "${{ inputs.gcp_project }}"
+          STATUS=$(gcloud builds describe "$BUILD_ID" --project "${{ inputs.gcp_project }}" --format='value(status)')
+          if [ "$STATUS" != "SUCCESS" ]; then
+            echo "Cloud Build failed with status: $STATUS"
+            exit 1
+          fi
 
       - name: Deploy Web to Cloud Run
         run: |
