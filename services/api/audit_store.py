@@ -72,7 +72,15 @@ def log_ai_event(
     # Trilha durável: emite o evento estruturado para o Cloud Logging.
     # Independe do disco local, sobrevivendo a reinícios/revisões do Cloud Run.
     try:
-        audit_logger.info("ai_audit", extra={"audit_event": event})
+        audit_logger.info(
+            "ai_audit %s tenant=%s backend=%s success=%s latency_ms=%s",
+            operation,
+            tenant_id,
+            backend,
+            success,
+            latency_ms,
+            extra={"audit_event": event},
+        )
     except Exception as exc:  # nunca derruba a requisição por falha de log
         logger.debug("Falha ao emitir audit log estruturado: %s", exc)
 
