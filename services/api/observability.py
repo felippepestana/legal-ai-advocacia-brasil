@@ -27,6 +27,12 @@ class JsonLogFormatter(logging.Formatter):
             "logger": record.name,
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }
+        # Campos estruturados opcionais (ex.: trilha de auditoria LGPD via
+        # logging.getLogger("ai_audit").info(..., extra={"audit_event": {...}}))
+        # viram jsonPayload.audit no Cloud Logging, tornando a auditoria durável.
+        audit_event = getattr(record, "audit_event", None)
+        if audit_event is not None:
+            payload["audit"] = audit_event
         if record.exc_info:
             payload["exception"] = self.formatException(record.exc_info)
         return json.dumps(payload, ensure_ascii=False)
