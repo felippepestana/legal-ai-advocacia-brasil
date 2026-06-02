@@ -64,8 +64,9 @@ jsonPayload.logger="ai_audit"
 | stats count() by jsonPayload.audit.tenant_id, jsonPayload.audit.operation
 ```
 
-> Para retenção/arquivamento de longo prazo, crie um **Log Sink** (BigQuery ou GCS) filtrando
-> `jsonPayload.logger="ai_audit"` — sem mudança de código.
+> Para retenção/arquivamento de longo prazo, crie um **Log Sink** (GCS ou BigQuery)
+> filtrando `jsonPayload.logger="ai_audit"`. Guia e script prontos: `ops/audit-log-sink.md`
+> (`scripts/setup_audit_log_sink.ps1`).
 
 ### Export in-app (instância/dia corrente)
 
