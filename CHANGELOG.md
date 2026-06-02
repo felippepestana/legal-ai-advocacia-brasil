@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.0.2] — 2026-06-01
+
+### CI/CD e produção
+
+- **GitHub Actions**: deploy Cloud Run estável — build assíncrono com polling (`gcloud builds describe`) em substituição ao streaming de logs e ao comando `gcloud builds wait` (indisponível no runner).
+- **IAM GCP**: `roles/artifactregistry.reader` para `github-deploy`, compute default e Cloud Run robot SA — corrige `PERMISSION_DENIED` no `gcloud run deploy`.
+- **WIF**: documentação de `serviceAccountTokenCreator` e mapeamento `attribute.repository` em `ops/GCP-SETUP.md`.
+- **Deploy validado**: API + Web em `sistemalabadvia` / `southamerica-east1` com `AUTH_REQUIRED=true`, `tenants_configured: 2`, CORS alinhado ao frontend.
+
+### URLs de produção
+
+- Web: https://advocacia-web-634789300838.southamerica-east1.run.app
+- API: https://advocacia-api-634789300838.southamerica-east1.run.app
+- Health: `/v1/health`
+
+---
+
+## [2.0.1] — 2026-06-01
+
+### Hotfix produção
+
+- Dependência `openai` adicionada ao `requirements.txt` (container Cloud Run não subia sem ela).
+- Auth multi-tenant via Secret Manager (`tenants-json`) e `AUTH_REQUIRED=true` em produção.
+- Primeiro deploy manual GCP + secrets GitHub (`GCP_TENANTS_SECRET`, WIF).
+
+---
+
 ## [2.0.0] — 2026-05-27
 
 ### Escopo V2 — Jurídico e gestão

@@ -46,10 +46,24 @@ jobs:
 
       - name: Build and push API image
         run: |
-          gcloud builds submit \
+          BUILD_ID=$(gcloud builds submit \
             --project "${{ inputs.gcp_project }}" \
-            --default-buckets-behavior=regional-user-owned-bucket \
-            --tag "gcr.io/${{ inputs.gcp_project }}/${{ inputs.api_service_name }}:${{ github.sha }}"
+            --async \
+            --format='value(id)' \
+            --tag "gcr.io/${{ inputs.gcp_project }}/${{ inputs.api_service_name }}:${{ github.sha }}")
+          for i in $(seq 1 60); do
+            STATUS=$(gcloud builds describe "$BUILD_ID" --project "${{ inputs.gcp_project }}" --format='value(status)')
+            echo "Build $BUILD_ID status: $STATUS"
+            if [ "$STATUS" = "SUCCESS" ]; then
+              exit 0
+            fi
+            if [ "$STATUS" = "FAILURE" ] || [ "$STATUS" = "CANCELLED" ] || [ "$STATUS" = "TIMEOUT" ]; then
+              exit 1
+            fi
+            sleep 15
+          done
+          echo "Cloud Build timeout"
+          exit 1
 
       - name: Deploy API to Cloud Run
         env:
@@ -116,11 +130,25 @@ jobs:
 
       - name: Build and push Web image
         run: |
-          gcloud builds submit \
+          BUILD_ID=$(gcloud builds submit \
             --project "${{ inputs.gcp_project }}" \
-            --default-buckets-behavior=regional-user-owned-bucket \
+            --async \
+            --format='value(id)' \
             --config cloudbuild.web.yaml \
-            --substitutions "_VITE_API_URL=${{ needs.deploy-api.outputs.api_url }},_IMAGE=gcr.io/${{ inputs.gcp_project }}/${{ inputs.web_service_name }}:${{ github.sha }}"
+            --substitutions "_VITE_API_URL=${{ needs.deploy-api.outputs.api_url }},_IMAGE=gcr.io/${{ inputs.gcp_project }}/${{ inputs.web_service_name }}:${{ github.sha }}")
+          for i in $(seq 1 60); do
+            STATUS=$(gcloud builds describe "$BUILD_ID" --project "${{ inputs.gcp_project }}" --format='value(status)')
+            echo "Build $BUILD_ID status: $STATUS"
+            if [ "$STATUS" = "SUCCESS" ]; then
+              exit 0
+            fi
+            if [ "$STATUS" = "FAILURE" ] || [ "$STATUS" = "CANCELLED" ] || [ "$STATUS" = "TIMEOUT" ]; then
+              exit 1
+            fi
+            sleep 15
+          done
+          echo "Cloud Build timeout"
+          exit 1
 
       - name: Deploy Web to Cloud Run
         run: |
