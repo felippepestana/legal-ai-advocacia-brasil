@@ -32,7 +32,8 @@ necessária no destino.
 PROJECT=sistemalabadvia
 REGION=southamerica-east1
 BUCKET=${PROJECT}-ai-audit-logs
-FILTER='resource.type="cloud_run_revision" AND jsonPayload.logger="ai_audit"'
+# Logger específico da aplicação — sem restrição de resource.type, resiliente a migração de infra
+FILTER='jsonPayload.logger="ai_audit"'
 
 # 1. Bucket durável com retenção (~5 anos)
 gcloud storage buckets create gs://$BUCKET --project=$PROJECT \

@@ -26,8 +26,10 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-# Filtro: somente eventos da trilha de auditoria de IA no Cloud Run
-$Filter = 'resource.type="cloud_run_revision" AND jsonPayload.logger="ai_audit"'
+# Filtro: o logger "ai_audit" é específico da aplicação, então não restringimos
+# por resource.type — isso mantém o sink resiliente a migrações de infra
+# (Cloud Run Jobs, GKE, Compute Engine, etc.).
+$Filter = 'jsonPayload.logger="ai_audit"'
 
 Write-Host "==> Projeto: $ProjectId | Destino: $Destination | Filtro: $Filter"
 
@@ -36,7 +38,7 @@ if ($Destination -eq "gcs") {
     $sinkDest = "storage.googleapis.com/$BucketName"
 
     Write-Host "==> Criando bucket gs://$BucketName (se nao existir)..."
-    $exists = gcloud storage buckets describe "gs://$BucketName" --project $ProjectId 2>$null
+    $exists = gcloud storage buckets list --project $ProjectId --filter "name=$BucketName" --format "value(name)"
     if (-not $exists) {
         gcloud storage buckets create "gs://$BucketName" `
             --project $ProjectId `
@@ -58,22 +60,24 @@ else {
     $sinkDest = "bigquery.googleapis.com/projects/$ProjectId/datasets/$DatasetName"
 
     Write-Host "==> Criando dataset BigQuery $DatasetName (se nao existir)..."
-    $exists = bq --project_id=$ProjectId show $DatasetName 2>$null
+    $exists = bq ls --project_id=$ProjectId --datasets --format=json | Select-String -SimpleMatch "`"$DatasetName`""
     if (-not $exists) {
         bq --project_id=$ProjectId --location=$Region mk --dataset `
             --description "Trilha de auditoria LGPD (ai_audit)" $DatasetName
     }
 
+    # Menor privilégio: concede a permissão apenas no dataset (não no projeto inteiro).
     $writerRole = "roles/bigquery.dataEditor"
     $grantCmd = {
         param($member)
-        gcloud projects add-iam-policy-binding $ProjectId `
-            --member $member --role $writerRole --condition None
+        bq add-iam-policy-binding --member "$member" --role $writerRole "${ProjectId}:${DatasetName}"
     }
 }
 
 Write-Host "==> Criando/atualizando sink '$SinkName' -> $sinkDest ..."
-$sinkExists = gcloud logging sinks describe $SinkName --project $ProjectId 2>$null
+# Checagem por listagem (exit 0 mesmo quando não existe) — robusta a
+# $PSNativeCommandUseErrorActionPreference.
+$sinkExists = gcloud logging sinks list --project $ProjectId --filter "name=$SinkName" --format "value(name)"
 if ($sinkExists) {
     gcloud logging sinks update $SinkName $sinkDest --project $ProjectId --log-filter "$Filter"
 }
