@@ -143,7 +143,9 @@ TENANT_KEYS_PATH=config/tenants.json
 
 Modelo em `config/tenants.example.json`. Sem tenants configurados, a API permanece aberta (`tenant_id=public`).
 
-Consultas IA geram audit log JSONL em `data/audit/` (hash do prompt, sem texto integral). Consulta: `GET /v1/audit/recent`.
+Consultas IA geram audit log (hash do prompt, sem texto integral). Consulta in-app: `GET /v1/audit/recent`.
+
+Em produção (`LOG_FORMAT=json`), cada evento também é emitido pelo logger `ai_audit` para o **Cloud Logging**, formando uma **trilha durável** (o `data/audit/` local é efêmero no Cloud Run). Consultas prontas em `ops/cloud-logging-queries.md`.
 
 ### Cache de pesquisa externa
 

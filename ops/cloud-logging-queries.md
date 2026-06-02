@@ -35,14 +35,42 @@ timestamp>="-7d"
 | stats count() by httpRequest.requestUrl
 ```
 
-## Auditoria IA — export offline
+## Auditoria IA — trilha durável (Cloud Logging)
 
-Os eventos de auditoria ficam em `data/audit/` (JSONL) ou via:
+Com `LOG_FORMAT=json`, cada consulta de IA é registrada de forma **durável** pelo logger
+`ai_audit` (sobrevive a reinícios/revisões do Cloud Run, ao contrário de `data/audit/`).
+O evento vai em `jsonPayload.audit` (sem texto integral do prompt — apenas `prompt_hash`,
+contagens e metadados, alinhado à LGPD):
+
+```
+resource.type="cloud_run_revision"
+jsonPayload.logger="ai_audit"
+timestamp>="-7d"
+```
+
+Falhas de IA (alertas):
+
+```
+resource.type="cloud_run_revision"
+jsonPayload.logger="ai_audit"
+jsonPayload.audit.success=false
+```
+
+Por tenant / operação:
+
+```
+resource.type="cloud_run_revision"
+jsonPayload.logger="ai_audit"
+| stats count() by jsonPayload.audit.tenant_id, jsonPayload.audit.operation
+```
+
+> Para retenção/arquivamento de longo prazo, crie um **Log Sink** (BigQuery ou GCS) filtrando
+> `jsonPayload.logger="ai_audit"` — sem mudança de código.
+
+### Export in-app (instância/dia corrente)
 
 - `GET /v1/audit/recent`
 - `GET /v1/audit/export` (CSV)
-
-Para correlacionar com logs de aplicação, filtre por `jsonPayload.operation` contendo `ai_`.
 
 ## Grafana / Looker
 
