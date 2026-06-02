@@ -48,6 +48,7 @@ jobs:
         run: |
           gcloud builds submit \
             --project "${{ inputs.gcp_project }}" \
+            --default-buckets-behavior=regional-user-owned-bucket \
             --tag "gcr.io/${{ inputs.gcp_project }}/${{ inputs.api_service_name }}:${{ github.sha }}"
 
       - name: Deploy API to Cloud Run
@@ -117,6 +118,7 @@ jobs:
         run: |
           gcloud builds submit \
             --project "${{ inputs.gcp_project }}" \
+            --default-buckets-behavior=regional-user-owned-bucket \
             --config cloudbuild.web.yaml \
             --substitutions "_VITE_API_URL=${{ needs.deploy-api.outputs.api_url }},_IMAGE=gcr.io/${{ inputs.gcp_project }}/${{ inputs.web_service_name }}:${{ github.sha }}"
 

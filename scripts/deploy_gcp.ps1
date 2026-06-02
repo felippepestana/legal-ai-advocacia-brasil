@@ -18,7 +18,7 @@ Write-Host "==> Projeto: $ProjectId | Região: $Region"
 
 if (-not $WebOnly) {
     Write-Host "==> Build e deploy API..."
-    gcloud builds submit --project $ProjectId --tag "gcr.io/$ProjectId/${ApiService}:latest" .
+    gcloud builds submit --project $ProjectId --default-buckets-behavior=regional-user-owned-bucket --tag "gcr.io/$ProjectId/${ApiService}:latest" .
 
     $envVars = @(
         "AI_BACKEND=vertex",
@@ -62,6 +62,7 @@ if (-not $ApiOnly) {
 
     Write-Host "==> Build Web com VITE_API_URL=$apiUrl"
     gcloud builds submit --project $ProjectId `
+        --default-buckets-behavior=regional-user-owned-bucket `
         --config cloudbuild.web.yaml `
         --substitutions "_VITE_API_URL=$apiUrl,_IMAGE=gcr.io/$ProjectId/${WebService}:latest"
 
